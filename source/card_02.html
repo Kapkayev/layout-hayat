@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hayat Construction Group – Каталог</title>
+	<title>Hayat Construction Group – Карточка</title>
 	<!-- Fonts -->
 	<link rel="stylesheet"  href="css/fonts.css">
 	<!-- Nouislider -->
@@ -182,299 +182,230 @@
 	</div>
 </section>
 
-<section class="wrapper-full">
-	<div class="wrapper-fix">
-		<div class="container-headers margin-large">
-			<div class="caption">
-				<a href="#">Главная</a>
-				<a href="#">Квартиры</a>
+<section class="wrapper-full section-details">
+	<div class="wrapper-fix wrapper-details">
+		<div class="container-details option-02">
+			<div class="container-details__column-01">
+				<div class="container-details__title">
+					<div class="container-headers">
+						<div class="caption">
+							<a href="#">Главная</a>
+							<a href="#">коммерческие помещения</a>
+							<a href="#">Помещение №А35</a>
+						</div>
+						<h2>
+							Помещение №А35
+						</h2>
+					</div>
+				</div>
+				<div class="container-details__table">
+					<div class="container-details__table-item">
+						<p>Площадь</p>
+						<span></span>
+						<p>106,4 м²</p>
+					</div>
+					<div class="container-details__table-item">
+						<p>проект</p>
+						<span></span>
+						<p>Hayat Meliora</p>
+					</div>
+					<div class="container-details__table-item">
+						<p>блок</p>
+						<span></span>
+						<p>5 очередь</p>
+					</div>
+					<div class="container-details__table-item">
+						<p>этаж</p>
+						<span></span>
+						<p>4 из 8</p>
+					</div>
+					<div class="container-details__table-item">
+						<p>сдача</p>
+						<span></span>
+						<p>III квартал 2024</p>
+					</div>
+				</div>
+				
+				<div class="container-details__total">
+					<p>56 890 399 ₸</p>
+					<span>в ипотеку от 450 360 ₸/месяц</span>
+				</div>
+
+				<a href="#" class="button">
+					оставить заявку
+				</a>
 			</div>
-			<h2>
-				выбрать квартиры
-			</h2>
+			<div class="container-details__column-02">
+				<div class="container-details__plan-block">
+					<div class="container-details__plan-column-01">
+						<div class="container-details__image">
+							<img src="media/plan_04.svg" alt="Image">
+						</div>
+					</div>
+					<div class="container-details__plan-column-02">
+						<div class="container-details__compass">
+							<img src="media/icons/icon_compass.svg" alt="">
+						</div>
+						<a href="media/plan_04.svg" class="container-details__image-button open-plan">
+							<img src="media/icons/icon_maximize.svg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section class="wrapper-full section-catalog">
-	<div class="wrapper-fix wrapper-catalog">
-		<div class="container-catalog">
-			<div class="container-catalog__column-01">
-				<form class="container-catalog__filters">
+<section class="wrapper-full section-similar">
+	<div class="wrapper-fix wrapper-similar">
+		<div class="container-similar">
+			<div class="container-similar__row-01">
+				<div class="container-headers">
+					<h2>
+						похожие помещения
+					</h2>
+				</div>
 
-					<div class="input-block customizations-select catalog-projects-select">
-						<p>Выберите проект</p>
-						<select id="catalog-projects-select">
-							<option value="0">Все</option>
-							<option value="1">Hayat meliora</option>
-							<option value="2">hayat appartments</option>
-							<option value="3">hayat park</option>
-							<option value="4">besagash</option>
-							<option value="5">alatau village</option>
-							<option value="6">hayat central park</option>
-						</select>	
-					</div>
-
-					<div class="input-block customizations-select process-select">
-						<p>Готовность</p>
-						<select id="catalog-process-select">
-							<option value="1">Все</option>
-							<option value="2">Объект сдан</option>
-							<option value="3">Строится</option>
-						</select>	
-					</div>
-
-					<div class="input-block buttons">
-						<p>Комнатность</p>
-						<div class="radio-group">
-							<input type="radio" id="filters-room-00" name="rooms" value="0">
-							<label for="filters-room-00">Студия</label>
-
-							<input type="radio" id="filters-room-01" name="rooms" value="1">
-							<label for="filters-room-01">1к</label>
-
-							<input type="radio" id="filters-room-02" name="rooms" value="2">
-							<label for="filters-room-02">2к</label>
-							
-							<input type="radio" id="filters-room-03" name="rooms" value="3">
-							<label for="filters-room-03">3к</label>
-
-							<input type="radio" id="filters-room-04" name="rooms" value="3">
-							<label for="filters-room-04">4к+</label>
-						</div>
-					</div>
-
-					<div class="input-block range">
-						<p>Площадь, м²</p>
-						<div class="range-input">
-							<div class="values">
-								<span id="filters-lower-value-01"></span>
-								<span id="filters-upper-value-01"></span>
-							</div>
-							<div class="custom-range" id="filters-range-01"></div>
-						</div>
-					</div>
-
-					<div class="input-block range">
-						<p>Стоимость квартиры, млн ₸</p>
-						<div class="range-input">
-							<div class="values">
-								<span id="filters-lower-value-02"></span>
-								<span id="filters-upper-value-02"></span>
-							</div>
-							<div class="custom-range" id="filters-range-02"></div>
-						</div>
-					</div>
-
-					<button type="reset" class="button">Сбросить</button>
-				</form>
-				<div></div>
+				<div class="slider-navigation container-similar__slider-navigation">
+					<span class="button button-prev" id="owl-similar-prev">
+						<img src="media/icons/icon_arrow-narrow-left.svg" alt="" class="img-svg">
+					</span>
+					<span class="button button-next" id="owl-similar-next">
+						<img src="media/icons/icon_arrow-narrow-right.svg" alt="" class="img-svg">
+					</span>
+				</div>
 			</div>
-			<div class="container-catalog__column-02">
-				<div class="container-catalog__row-01">
-					<div class="result">
-						<p>Найдено 56 квартир</p>
+			<div class="container-similar__row-02">
+				<div class="container-similar__slider">
+					
+					<div class="similar-slider owl-carousel owl-theme">
+
+						<a href="#" class="similar-item item">
+							<div class="similar-item-head">
+								<img src="media/plan_02.svg" alt="">
+							</div>
+							<div class="similar-item-body">
+								<p>Помещение №А35</p>
+								<div class="similar-item-table">
+									<div>
+										<p>Площадь</p>
+										<p>106,4 м²</p>
+									</div>
+									<div>
+										<p>блок</p>
+										<p>3 очередь</p>
+									</div>
+									<div>
+										<p>этаж</p>
+										<p>5 из 8</p>
+									</div>
+									<div>
+										<p>сдача</p>
+										<p>III квартал 2024</p>
+									</div>
+								</div>
+							</div>
+							<div class="similar-item-footer">
+								<p>56 890 399 ₸</p>
+								<span>в ипотеку от 450 360 ₸/мес.</span>
+							</div>
+						</a>
+
+						<a href="#" class="similar-item item">
+							<div class="similar-item-head">
+								<img src="media/plan_02.svg" alt="">
+							</div>
+							<div class="similar-item-body">
+								<p>Помещение №А35</p>
+								<div class="similar-item-table">
+									<div>
+										<p>Площадь</p>
+										<p>106,4 м²</p>
+									</div>
+									<div>
+										<p>блок</p>
+										<p>3 очередь</p>
+									</div>
+									<div>
+										<p>этаж</p>
+										<p>5 из 8</p>
+									</div>
+									<div>
+										<p>сдача</p>
+										<p>III квартал 2024</p>
+									</div>
+								</div>
+							</div>
+							<div class="similar-item-footer">
+								<p>56 890 399 ₸</p>
+								<span>в ипотеку от 450 360 ₸/мес.</span>
+							</div>
+						</a>
+
+						<a href="#" class="similar-item item">
+							<div class="similar-item-head">
+								<img src="media/plan_02.svg" alt="">
+							</div>
+							<div class="similar-item-body">
+								<p>Помещение №А35</p>
+								<div class="similar-item-table">
+									<div>
+										<p>Площадь</p>
+										<p>106,4 м²</p>
+									</div>
+									<div>
+										<p>блок</p>
+										<p>3 очередь</p>
+									</div>
+									<div>
+										<p>этаж</p>
+										<p>5 из 8</p>
+									</div>
+									<div>
+										<p>сдача</p>
+										<p>III квартал 2024</p>
+									</div>
+								</div>
+							</div>
+							<div class="similar-item-footer">
+								<p>56 890 399 ₸</p>
+								<span>в ипотеку от 450 360 ₸/мес.</span>
+							</div>
+						</a>
+
+						<a href="#" class="similar-item item">
+							<div class="similar-item-head">
+								<img src="media/plan_02.svg" alt="">
+							</div>
+							<div class="similar-item-body">
+								<p>Помещение №А35</p>
+								<div class="similar-item-table">
+									<div>
+										<p>Площадь</p>
+										<p>106,4 м²</p>
+									</div>
+									<div>
+										<p>блок</p>
+										<p>3 очередь</p>
+									</div>
+									<div>
+										<p>этаж</p>
+										<p>5 из 8</p>
+									</div>
+									<div>
+										<p>сдача</p>
+										<p>III квартал 2024</p>
+									</div>
+								</div>
+							</div>
+							<div class="similar-item-footer">
+								<p>56 890 399 ₸</p>
+								<span>в ипотеку от 450 360 ₸/мес.</span>
+							</div>
+						</a>
+
 					</div>
 
-					<div class="input-block customizations-select catalog-sort-select">
-						<select id="catalog-sort-select">
-							<option value="1">сначала популярные</option>
-						</select>	
-					</div>
-				</div>
-				<div class="container-catalog__row-02">
-
-					<a href="#" class="catalog-item">
-						<div class="catalog-item-head">
-							<img src="media/plan_01.svg" alt="">
-						</div>
-						<div class="catalog-item-body">
-							<p>3-комнатная, №389</p>
-							<div class="catalog-item-table">
-								<div>
-									<p>Площадь</p>
-									<p>106,4 м²</p>
-								</div>
-								<div>
-									<p>блок</p>
-									<p>3 очередь</p>
-								</div>
-								<div>
-									<p>этаж</p>
-									<p>5 из 8</p>
-								</div>
-								<div>
-									<p>сдача</p>
-									<p>III квартал 2024</p>
-								</div>
-							</div>
-						</div>
-						<div class="catalog-item-footer">
-							<p>56 890 399 ₸</p>
-							<span>в ипотеку от 450 360 ₸/мес.</span>
-						</div>
-					</a>
-
-					<a href="#" class="catalog-item">
-						<div class="catalog-item-head">
-							<img src="media/plan_01.svg" alt="">
-						</div>
-						<div class="catalog-item-body">
-							<p>3-комнатная, №389</p>
-							<div class="catalog-item-table">
-								<div>
-									<p>Площадь</p>
-									<p>106,4 м²</p>
-								</div>
-								<div>
-									<p>блок</p>
-									<p>3 очередь</p>
-								</div>
-								<div>
-									<p>этаж</p>
-									<p>5 из 8</p>
-								</div>
-								<div>
-									<p>сдача</p>
-									<p>III квартал 2024</p>
-								</div>
-							</div>
-						</div>
-						<div class="catalog-item-footer">
-							<p>56 890 399 ₸</p>
-							<span>в ипотеку от 450 360 ₸/мес.</span>
-						</div>
-					</a>
-
-					<a href="#" class="catalog-item">
-						<div class="catalog-item-head">
-							<img src="media/plan_01.svg" alt="">
-						</div>
-						<div class="catalog-item-body">
-							<p>3-комнатная, №389</p>
-							<div class="catalog-item-table">
-								<div>
-									<p>Площадь</p>
-									<p>106,4 м²</p>
-								</div>
-								<div>
-									<p>блок</p>
-									<p>3 очередь</p>
-								</div>
-								<div>
-									<p>этаж</p>
-									<p>5 из 8</p>
-								</div>
-								<div>
-									<p>сдача</p>
-									<p>III квартал 2024</p>
-								</div>
-							</div>
-						</div>
-						<div class="catalog-item-footer">
-							<p>56 890 399 ₸</p>
-							<span>в ипотеку от 450 360 ₸/мес.</span>
-						</div>
-					</a>
-
-					<a href="#" class="catalog-item">
-						<div class="catalog-item-head">
-							<img src="media/plan_01.svg" alt="">
-						</div>
-						<div class="catalog-item-body">
-							<p>3-комнатная, №389</p>
-							<div class="catalog-item-table">
-								<div>
-									<p>Площадь</p>
-									<p>106,4 м²</p>
-								</div>
-								<div>
-									<p>блок</p>
-									<p>3 очередь</p>
-								</div>
-								<div>
-									<p>этаж</p>
-									<p>5 из 8</p>
-								</div>
-								<div>
-									<p>сдача</p>
-									<p>III квартал 2024</p>
-								</div>
-							</div>
-						</div>
-						<div class="catalog-item-footer">
-							<p>56 890 399 ₸</p>
-							<span>в ипотеку от 450 360 ₸/мес.</span>
-						</div>
-					</a>
-
-					<a href="#" class="catalog-item">
-						<div class="catalog-item-head">
-							<img src="media/plan_01.svg" alt="">
-						</div>
-						<div class="catalog-item-body">
-							<p>3-комнатная, №389</p>
-							<div class="catalog-item-table">
-								<div>
-									<p>Площадь</p>
-									<p>106,4 м²</p>
-								</div>
-								<div>
-									<p>блок</p>
-									<p>3 очередь</p>
-								</div>
-								<div>
-									<p>этаж</p>
-									<p>5 из 8</p>
-								</div>
-								<div>
-									<p>сдача</p>
-									<p>III квартал 2024</p>
-								</div>
-							</div>
-						</div>
-						<div class="catalog-item-footer">
-							<p>56 890 399 ₸</p>
-							<span>в ипотеку от 450 360 ₸/мес.</span>
-						</div>
-					</a>
-
-					<a href="#" class="catalog-item">
-						<div class="catalog-item-head">
-							<img src="media/plan_01.svg" alt="">
-						</div>
-						<div class="catalog-item-body">
-							<p>3-комнатная, №389</p>
-							<div class="catalog-item-table">
-								<div>
-									<p>Площадь</p>
-									<p>106,4 м²</p>
-								</div>
-								<div>
-									<p>блок</p>
-									<p>3 очередь</p>
-								</div>
-								<div>
-									<p>этаж</p>
-									<p>5 из 8</p>
-								</div>
-								<div>
-									<p>сдача</p>
-									<p>III квартал 2024</p>
-								</div>
-							</div>
-						</div>
-						<div class="catalog-item-footer">
-							<p>56 890 399 ₸</p>
-							<span>в ипотеку от 450 360 ₸/мес.</span>
-						</div>
-					</a>
-
-				</div>
-				<div class="container-catalog__row-03">
-					<a href="#" class="button">
-						Показать еще <span>12</span> из <span>152</span> квартир
-					</a>
 				</div>
 			</div>
 		</div>

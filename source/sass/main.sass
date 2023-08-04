@@ -397,6 +397,10 @@ p
 						border: 1px solid var(--color-white)
 						@include element_animation
 
+						img
+							width: 20px
+							height: 20px
+
 						&:last-child
 							justify-content: space-between
 							padding: 15px 20px
@@ -550,7 +554,7 @@ p
 					right: auto
 
 				.title-slider-text
-					bottom: -60px
+					bottom: 40px
 
 					.container-headers
 						margin: 0px 0px 20px 0px
@@ -1024,24 +1028,15 @@ p
 				text-transform: uppercase
 				padding: 12px 20px
 
+				border: 1px solid var(--color-dark-10)
+				border-right: 0px
+
 				@include element_animation
 
 				&:hover
 					background-color: var(--color-dark-03)
 
-				&:nth-child(2)
-					border: 1px solid var(--color-dark-10)
-					border-right: 0px
-
-				&:nth-child(4)
-					border: 1px solid var(--color-dark-10)
-					border-right: 0px
-
-				&:nth-child(6)
-					border: 1px solid var(--color-dark-10)
-					border-right: 0px
-
-				&:nth-child(8)
+				&:last-child
 					border: 1px solid var(--color-dark-10)
 
 			input[type=radio]:checked + label
@@ -1568,7 +1563,7 @@ p
 						width: 50%
 
 						&:first-child
-							font-family: var(--font-family-text)
+							font-family: var(--font-family-subtitle)
 							font-weight: 400
 							font-size: 12px
 							line-height: 20px
@@ -1961,7 +1956,7 @@ p
 			margin: 10px 0px 0px 0px
 
 			span
-				font-family: var(--font-family-text)
+				font-family: var(--font-family-subtitle)
 				font-weight: 400
 				font-size: 12px
 				color: var(--color-dark-40)
@@ -1991,7 +1986,7 @@ p
 	padding: 0px 0px 0px 40px 
 
 	& > p
-		font-family: var(--font-family-text)
+		font-family: var(--font-family-subtitle)
 		font-weight: 400
 		font-size: 12px
 		color: var(--color-dark-40)
@@ -2157,7 +2152,7 @@ p
 
 					span
 						display: inline-block
-						font-family: var(--font-family-text)
+						font-family: var(--font-family-subtitle)
 						font-weight: 400
 						font-size: 14px
 						line-height: 26px
@@ -2244,7 +2239,7 @@ p
 			input
 				flex: 1
 				height: 64px
-				font-family: var(--font-family-text)
+				font-family: var(--font-family-subtitle)
 				font-weight: 400
 				font-size: 14px
 				line-height: 24px
@@ -2260,7 +2255,7 @@ p
 				@include element_animation
 
 				&::placeholder
-					font-family: var(--font-family-text)
+					font-family: var(--font-family-subtitle)
 					font-weight: 400
 					font-size: 14px
 					line-height: 24px
@@ -2273,7 +2268,7 @@ p
 			button
 				flex: 3
 				height: 64px
-				font-family: var(--font-family-text)
+				font-family: var(--font-family-subtitle)
 				font-weight: 400
 				font-size: 14px
 				line-height: 24px
@@ -2405,7 +2400,7 @@ p
 			border-bottom: 1px solid var(--color-dark-40)
 
 			p
-				font-family: var(--font-family-text)
+				font-family: var(--font-family-subtitle)
 				font-weight: 300
 				font-size: 14px
 				line-height: 24px
@@ -2421,8 +2416,8 @@ p
 
 				li
 					a
-						font-family: var(--font-family-text)
-						font-weight: 600
+						font-family: var(--font-family-subtitle)
+						font-weight: 400
 						font-size: 14px
 						line-height: 24px
 						text-transform: uppercase
@@ -2511,11 +2506,20 @@ p
 
 	&.option-02
 		.container-details__column-01
-			width: 32%
+			width: 33%
 			position: relative
 
 		.container-details__column-02
-			width: 68%
+			width: 67%
+			position: relative
+
+	&.option-03
+		.container-details__column-01
+			width: 50%
+			position: relative
+
+		.container-details__column-02
+			width: 50%
 			position: relative
 
 .container-details__column-01
@@ -2574,6 +2578,26 @@ p
 				background-color: var(--color-dark-10)
 				margin: 0px 12px 4px 12px
 
+	.container-details__total
+		display: flex
+		flex-direction: column
+		row-gap: 2px
+		margin: 28px 0px
+
+		p
+			font-family: var(--font-family-text)
+			font-weight: 500
+			font-size: 32px
+			line-height: 36px
+			color: var(--color-dark-100)
+
+		span
+			font-family: var(--font-family-subtitle)
+			font-size: 12px
+			line-height: 20px
+			text-transform: uppercase
+			color: var(--color-dark-40)
+
 	.button
 		width: 100%
 		display: inline-block
@@ -2602,6 +2626,53 @@ p
 		height: 100%
 		position: relative
 		background-color: var(--color-dark-10)
+
+	.container-details__plan-block
+		width: 100%
+		height: 100%
+		display: flex
+		column-gap: 50px
+
+		.container-details__plan-column-01
+			flex: 1
+			display: flex
+			justify-content: center
+			align-items: center
+
+			.container-details__image
+				width: 100%
+				height: 100%
+				display: flex
+				justify-content: center
+				align-items: center
+
+				img
+					width: 100%
+					max-height: 400px
+
+		.container-details__plan-column-02
+			width: 90px
+			min-width: 90px
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			align-items: flex-end
+
+			.container-details__image-button
+				width: 48px
+				height: 48px
+				display: flex
+				justify-content: center
+				align-items: center
+				background-color: var(--color-white)
+				border-radius: 50%
+				border: 1px solid var(--color-dark-10)
+				cursor: pointer
+				@include element_animation
+
+				&:hover
+					background-color: var(--color-dark-03)
 
 /* DETAILS STYLE SETTINGS END. */
 
@@ -2655,12 +2726,12 @@ p
 				label
 					flex: 1
 					background-color: var(--color-white)
+					
+					border: 1px solid var(--color-dark-10)
+					border-right: 0px
 
-					&:nth-child(8)
-						border: 1px solid var(--color-dark-10)
-						border-right: 0px
 
-					&:nth-child(10)
+					&:last-child
 						border: 1px solid var(--color-dark-10)
 
 		&.customizations-select
@@ -2848,3 +2919,148 @@ p
 				color: var(--color-white)
 
 /* CATALOG STYLE SETTINGS END. */
+
+
+
+/* SIMILAR CARDS STYLE SETTINGS START: */
+
+.section-similar
+	margin: 96px auto
+
+.container-similar
+	width: 100%
+	display: flex
+	flex-direction: column
+	row-gap: 64px
+
+	.container-similar__row-01
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		.container-similar__slider-navigation
+			.button
+				border: 1px solid var(--color-dark-10)
+
+				&.button-prev
+					background-color: transparent
+
+					.img-svg path
+						stroke: var(--color-dark-100)
+
+				&.button-next
+					background-color: var(--color-orange-100)
+
+				&:hover
+					background-color: var(--color-dark-03)
+
+					&.button-next
+						background-color: var(--color-orange-150)
+
+
+	.container-similar__row-02
+		width: 100%
+		position: relative
+
+		.container-similar__slider
+			width: 100%
+
+			.similar-slider
+				width: 100%
+				position: relative
+
+				.similar-item
+					width: 100%
+					display: inline-flex
+					flex-direction: column
+					row-gap: 32px
+					text-decoration: none
+
+					padding: 24px 24px
+					border: 1px solid var(--color-dark-10)
+					@include element_animation
+
+					&:hover
+						.similar-item-body
+							& > p
+								color: var(--color-orange-100)
+
+						.similar-item-footer
+							p
+								color: var(--color-orange-100)
+
+					.similar-item-head
+						width: 100%
+						height: 250px
+						display: flex
+						justify-content: center
+						align-items: center
+
+						img
+							width: 100%
+							max-height: 250px
+
+					.similar-item-body
+						& > p
+							font-family: var(--font-family-text)
+							font-weight: 500
+							font-size: 18px
+							line-height: 24px
+							color: var(--color-dark-100)
+
+						.similar-item-table
+							width: 100%
+							display: flex
+							flex-direction: column
+							row-gap: 12px
+							margin: 20px 0px 0px 0px
+
+							div
+								width: 100%
+								display: flex
+								justify-content: space-between
+								align-items: center
+
+								p
+									&:first-child
+										white-space: nowrap
+										font-family: var(--font-family-subtitle)
+										font-weight: 400
+										font-size: 12px
+										line-height: 20px
+										color: var(--color-dark-40)
+										text-transform: uppercase
+
+									&:last-child
+										white-space: nowrap
+										font-family: var(--font-family-text)
+										font-weight: 300
+										font-size: 14px
+										line-height: 20px
+										color: var(--color-dark-100)
+
+					.similar-item-footer
+						border-top: 1px solid var(--color-dark-10)
+						padding: 20px 0px 0px 0px
+						display: flex
+						flex-direction: column
+						row-gap: 4px
+
+						p
+							font-family: var(--font-family-text)
+							font-weight: 400
+							font-size: 24px
+							line-height: 28px
+							color: var(--color-dark-100)
+
+						span
+							font-family: var(--font-family-subtitle)
+							font-weight: 400
+							font-size: 12px
+							line-height: 20px
+							color: var(--color-dark-40)
+							text-transform: uppercase
+
+/* SIMILAR CARDS STYLE SETTINGS END. */
+

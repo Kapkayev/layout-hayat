@@ -126,14 +126,14 @@ jQuery('.benefits-slider').on('changed.owl.carousel', function(e) {
 
 jQuery('#desktop-menu-button').click(function(){
 
-        jQuery(".section-menu").toggleClass("active");
-        jQuery(".container-menu__background-01").toggleClass("active");
-        jQuery(".container-menu__col-02").toggleClass("active");
+    jQuery(".section-menu").toggleClass("active");
+    jQuery(".container-menu__background-01").toggleClass("active");
+    jQuery(".container-menu__col-02").toggleClass("active");
 
-        setTimeout(function(){
-            jQuery('html').toggleClass("overflow");
-        }, 300)
-    })
+    setTimeout(function(){
+        jQuery('html').toggleClass("overflow");
+    }, 300)
+})
 
 /*--------------------------------------------------------------
 >>> BURGER MENU CODE END.
@@ -147,9 +147,11 @@ jQuery('#desktop-menu-button').click(function(){
 /* Custom selects code start: */
 
 customSelect('.process-select select');
+
 customSelect('.city-select select');
 
-customSelect('.catalog-process-select select');
+
+customSelect('.catalog-projects-select select');
 customSelect('.catalog-type-select select');
 
 customSelect('.catalog-sort-select select');
@@ -159,9 +161,9 @@ customSelect('.catalog-sort-select select');
 
 /* Range (Projects Panel) input code start: */
 
-const range = document.getElementById('range');
+const projectsPanelRange = document.getElementById('projects-panel-range');
 
-range && noUiSlider.create(range, {
+projectsPanelRange && noUiSlider.create(projectsPanelRange, {
     start: [0, 300],
     connect: true,
     range: {
@@ -172,13 +174,13 @@ range && noUiSlider.create(range, {
     tooltips: false,
 });
 
-const nodes = [
-    document.getElementById('lower-value'), // 0
-    document.getElementById('upper-value')  // 1
+const nodesProjectsPanel = [
+    document.getElementById('projects-panel-lower-value'), // 0
+    document.getElementById('projects-panel-upper-value')  // 1
 ];
 
-range && range.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
-    nodes[handle].innerHTML = `${values[handle].slice(0, -1)}`;
+projectsPanelRange && projectsPanelRange.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    nodesProjectsPanel[handle].innerHTML = `${values[handle].slice(0, -1)}`;
 });
 
 /* Range (Projects Panel) input code end. */
@@ -257,6 +259,7 @@ calculatorRange03 && calculatorRange03.noUiSlider.on('update', function (values,
 
 
 /* Range (Filters) input's code start: */
+/* Квартиры */
 
 const filtersRange01 = document.getElementById('filters-range-01');
 
@@ -303,6 +306,157 @@ filtersRange02 && filtersRange02.noUiSlider.on('update', function (values, handl
 });
 
 /* Range (Filters) input's code end. */
+
+
+/* Range (Filters) input's code start: */
+/* Помещения */
+
+const filtersRange03 = document.getElementById('filters-range-03');
+
+filtersRange03 && noUiSlider.create(filtersRange03, {
+    start: [23.4, 104.7],
+    connect: true,
+    range: {
+        'min': 23.4,
+        'max': 104.7
+    },
+    behaviour: 'tap-drag',
+    tooltips: false,
+});
+
+const nodesFiltersRange03 = [
+    document.getElementById('filters-lower-value-03'), // 0
+    document.getElementById('filters-upper-value-03')  // 1
+];
+
+filtersRange03 && filtersRange03.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    nodesFiltersRange03[handle].innerHTML = `${values[handle].slice(0, -1)}`;
+});
+
+const filtersRange04 = document.getElementById('filters-range-04');
+
+filtersRange04 && noUiSlider.create(filtersRange04, {
+    start: [13.5, 68.2],
+    connect: true,
+    range: {
+        'min': 13.5,
+        'max': 68.2
+    },
+    behaviour: 'tap-drag',
+    tooltips: false,
+});
+
+const nodesFiltersRange04 = [
+    document.getElementById('filters-lower-value-04'), // 0
+    document.getElementById('filters-upper-value-04')  // 1
+];
+
+filtersRange04 && filtersRange04.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    nodesFiltersRange04[handle].innerHTML = `${values[handle].slice(0, -1)}`;
+});
+
+/* Range (Filters) input's code end. */
+
+
+/* Range (Filters) input's code start: */
+/* Машино-места */
+
+const filtersRange05 = document.getElementById('filters-range-05');
+
+filtersRange05 && noUiSlider.create(filtersRange05, {
+    start: [13.6, 16.8],
+    connect: true,
+    range: {
+        'min': 13.6,
+        'max': 16.8
+    },
+    behaviour: 'tap-drag',
+    tooltips: false,
+});
+
+const nodesFiltersRange05 = [
+    document.getElementById('filters-lower-value-05'), // 0
+    document.getElementById('filters-upper-value-05')  // 1
+];
+
+filtersRange05 && filtersRange05.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    nodesFiltersRange05[handle].innerHTML = `${values[handle].slice(0, -1)}`;
+});
+
+const filtersRange06 = document.getElementById('filters-range-06');
+
+filtersRange06 && noUiSlider.create(filtersRange06, {
+    start: [1.8, 7.9],
+    connect: true,
+    range: {
+        'min': 1.8,
+        'max': 7.9
+    },
+    behaviour: 'tap-drag',
+    tooltips: false,
+});
+
+const nodesFiltersRange06 = [
+    document.getElementById('filters-lower-value-06'), // 0
+    document.getElementById('filters-upper-value-06')  // 1
+];
+
+filtersRange06 && filtersRange06.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    nodesFiltersRange06[handle].innerHTML = `${values[handle].slice(0, -1)}`;
+});
+
+/* Range (Filters) input's code end. */
+
+
+/* Range (Filters) input's code start: */
+/* Кладовые */
+
+const filtersRange07 = document.getElementById('filters-range-07');
+
+filtersRange07 && noUiSlider.create(filtersRange07, {
+    start: [3.2, 4.9],
+    connect: true,
+    range: {
+        'min': 3.2,
+        'max': 4.9
+    },
+    behaviour: 'tap-drag',
+    tooltips: false,
+});
+
+const nodesFiltersRange07 = [
+    document.getElementById('filters-lower-value-07'), // 0
+    document.getElementById('filters-upper-value-07')  // 1
+];
+
+filtersRange07 && filtersRange07.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    nodesFiltersRange07[handle].innerHTML = `${values[handle].slice(0, -1)}`;
+});
+
+const filtersRange08 = document.getElementById('filters-range-08');
+
+filtersRange08 && noUiSlider.create(filtersRange08, {
+    start: [2.9, 3.7],
+    connect: true,
+    range: {
+        'min': 2.9,
+        'max': 3.7
+    },
+    behaviour: 'tap-drag',
+    tooltips: false,
+});
+
+const nodesFiltersRange08 = [
+    document.getElementById('filters-lower-value-08'), // 0
+    document.getElementById('filters-upper-value-08')  // 1
+];
+
+filtersRange08 && filtersRange08.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    nodesFiltersRange08[handle].innerHTML = `${values[handle].slice(0, -1)}`;
+});
+
+/* Range (Filters) input's code end. */
+
 
 /*--------------------------------------------------------------
 >>> INPUT ELEMENTS CODE END.
@@ -371,3 +525,46 @@ jQuery('.projects-map-slider').owlCarousel({
 /*--------------------------------------------------------------
 >>> PROJECTS MAP OPTION CODE END.
 --------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> SIMILAR CARDS SLIDER CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.similar-slider').owlCarousel({
+    loop: true,
+    touchDrag: false,
+    mouseDrag: false,
+    nav: false,
+    dots: false,
+    autoWidth: false,
+    autoHeight: false,
+    autoplay: false,
+    items:4,
+    smartSpeed: 1500,
+    margin: 32
+})
+
+let owlSimilarSlider = jQuery('.similar-slider');
+owlSimilarSlider.owlCarousel();
+
+jQuery('#owl-similar-prev').click(function() {
+    owlSimilarSlider.trigger('prev.owl.carousel');
+})
+
+jQuery('#owl-similar-next').click(function() {
+    owlSimilarSlider.trigger('next.owl.carousel');
+})
+
+/*--------------------------------------------------------------
+>>> SIMILAR CARDS SLIDER CODE END.
+--------------------------------------------------------------*/
+
+
+
+jQuery('.open-plan').magnificPopup({
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-no-margins mfp-with-zoom plan-modal'
+});

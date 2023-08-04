@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hayat Construction Group – Проект</title>
+	<title>Hayat Construction Group – Каталог</title>
 	<!-- Fonts -->
 	<link rel="stylesheet"  href="css/fonts.css">
 	<!-- Nouislider -->
@@ -201,17 +201,21 @@
 		<div class="container-catalog">
 			<div class="container-catalog__column-01">
 				<form class="container-catalog__filters">
-					<!-- <div class="input-block customizations-select catalog-type-select">
-						<p>Тип недвижимости</p>
-						<select id="catalog-type-select">
-							<option value="1">Квартиры</option>
-							<option value="2">Помещения</option>
-							<option value="3">Машино-места</option>
-							<option value="4">Кладовые</option>
-						</select>	
-					</div> -->
 
-					<div class="input-block customizations-select catalog-process-select">
+					<div class="input-block customizations-select catalog-projects-select">
+						<p>Выберите проект</p>
+						<select id="catalog-projects-select">
+							<option value="0">Все</option>
+							<option value="1">Hayat meliora</option>
+							<option value="2">hayat appartments</option>
+							<option value="3">hayat park</option>
+							<option value="4">besagash</option>
+							<option value="5">alatau village</option>
+							<option value="6">hayat central park</option>
+						</select>	
+					</div>
+
+					<div class="input-block customizations-select process-select">
 						<p>Готовность</p>
 						<select id="catalog-process-select">
 							<option value="1">Все</option>
@@ -223,17 +227,17 @@
 					<div class="input-block buttons">
 						<p>Этажность</p>
 						<div class="radio-group">
-							<input type="radio" id="floor-01" name="floor" value="0">
-							<label for="floor-01">1</label>
+							<input type="radio" id="filters-floor-01" name="floor" value="0">
+							<label for="filters-floor-01">1</label>
 
-							<input type="radio" id="floor-02" name="floor" value="1">
-							<label for="floor-02">-1</label>
+							<input type="radio" id="filters-floor-02" name="floor" value="1">
+							<label for="filters-floor-02">-1</label>
 
-							<input type="radio" id="floor-03" name="floor" value="2">
-							<label for="floor-03">-2</label>
+							<input type="radio" id="filters-floor-03" name="floor" value="2">
+							<label for="filters-floor-03">-2</label>
 							
-							<input type="radio" id="floor-04" name="floor" value="3">
-							<label for="floor-04">-3</label>
+							<input type="radio" id="filters-floor-04" name="floor" value="3">
+							<label for="filters-floor-04">-3</label>
 						</div>
 					</div>
 
@@ -241,10 +245,10 @@
 						<p>Площадь, м²</p>
 						<div class="range-input">
 							<div class="values">
-								<span id="filters-lower-value-01"></span>
-								<span id="filters-upper-value-01"></span>
+								<span id="filters-lower-value-05"></span>
+								<span id="filters-upper-value-05"></span>
 							</div>
-							<div class="custom-range" id="filters-range-01"></div>
+							<div class="custom-range" id="filters-range-05"></div>
 						</div>
 					</div>
 
@@ -252,10 +256,10 @@
 						<p>Стоимость, млн ₸</p>
 						<div class="range-input">
 							<div class="values">
-								<span id="filters-lower-value-02"></span>
-								<span id="filters-upper-value-02"></span>
+								<span id="filters-lower-value-06"></span>
+								<span id="filters-upper-value-06"></span>
 							</div>
-							<div class="custom-range" id="filters-range-02"></div>
+							<div class="custom-range" id="filters-range-06"></div>
 						</div>
 					</div>
 
@@ -404,7 +408,7 @@
 				</div>
 				<div class="container-catalog__row-03">
 					<!-- <a href="#" class="button">
-						Показать еще <span>12</span> из <span>152</span> квартир
+						Показать еще <span>12</span> из <span>152</span> машино-мест
 					</a> -->
 				</div>
 			</div>
