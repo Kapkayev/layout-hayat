@@ -1,4 +1,38 @@
 /*--------------------------------------------------------------
+>>>  PRELOADER CODE START:
+--------------------------------------------------------------*/
+
+jQuery(window).on('load', function () {
+
+    jQuery('#indicator').spincrement({
+        thousandSeparator: "",
+        duration: 4000
+    });
+
+    jQuery("#progress").width("100%")
+
+
+    setTimeout(function(){
+        jQuery(".container-preloader__animation").fadeOut();
+        jQuery(".container-preloader__block").fadeOut();
+        jQuery(".container-preloader__background").toggleClass("active");
+    }, 4000)
+
+    setTimeout(function(){
+        jQuery(".section-preloader").fadeOut();
+        jQuery('html').css('overflowY', 'auto');
+    }, 6000)
+
+        
+ })
+
+/*--------------------------------------------------------------
+>>>  PRELOADER CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
 >>> SVG CODE START:
 --------------------------------------------------------------*/
 
@@ -138,6 +172,28 @@ jQuery('#desktop-menu-button').click(function(){
 /*--------------------------------------------------------------
 >>> BURGER MENU CODE END.
 --------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> BURGER MENU CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.application-modal-toggle').click(function(){
+
+    jQuery(".section-application").toggleClass("active");
+    jQuery(".container-application__background-01").toggleClass("active");
+    jQuery(".container-application__col-02").toggleClass("active");
+
+    setTimeout(function(){
+        jQuery('html').toggleClass("overflow");
+    }, 300)
+})
+
+/*--------------------------------------------------------------
+>>> BURGER MENU CODE END.
+--------------------------------------------------------------*/
+
 
 
 /*--------------------------------------------------------------
@@ -563,8 +619,76 @@ jQuery('#owl-similar-next').click(function() {
 
 
 
+/*--------------------------------------------------------------
+>>> PLAN MODAL CODE START:
+--------------------------------------------------------------*/
+
 jQuery('.open-plan').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
     mainClass: 'mfp-no-margins mfp-with-zoom plan-modal'
 });
+
+/*--------------------------------------------------------------
+>>> PLAN MODAL CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> ABOUT GRID SLIDER CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.grid-slider').owlCarousel({
+    loop: true,
+    touchDrag: false,
+    mouseDrag: false,
+    nav: false,
+    dots: false,
+    autoWidth: false,
+    autoHeight: false,
+    autoplay: true,
+    items:1,
+    animateOut: 'fadeOut',
+    smartSpeed: 5000,
+    margin: 0
+})
+
+let owlGridSlider = jQuery('.grid-slider');
+owlGridSlider.owlCarousel();
+
+jQuery('#owl-grid-prev').click(function() {
+    owlGridSlider.trigger('prev.owl.carousel');
+})
+
+jQuery('#owl-grid-next').click(function() {
+    owlGridSlider.trigger('next.owl.carousel');
+})
+
+/*--------------------------------------------------------------
+>>> ABOUT GRID SLIDER CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> TEAM MEMBER MODAL CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.open-team-modal').magnificPopup({
+    type: 'inline',
+    preloader: false,
+    modal: true,
+    midClick: true
+});
+
+jQuery(document).on('click', '.close-team-modal', function (e) {
+    e.preventDefault();
+    jQuery.magnificPopup.close();
+});
+
+/*--------------------------------------------------------------
+>>> TEAM MEMBER MODAL CODE END.
+--------------------------------------------------------------*/
+
+

@@ -9,6 +9,8 @@
 	box-sizing: border-box
 
 html
+	overflow-y: hidden
+
 	&.overflow
 		overflow: hidden
 
@@ -81,6 +83,9 @@ p
 .section-header
 	overflow: initial
 	border-bottom: 1px solid var(--color-dark-10)
+
+	&.absolute
+		position: absolute
 
 	&.light-theme
 		background-color: var(--color-white)
@@ -930,6 +935,13 @@ p
 
 	&.margin-middle
 		margin: 56px 0px
+
+	&.margin-small
+		margin: 0px 0px 46px 0px
+
+	&.border
+		border-bottom: 1px solid var(--color-dark-10)
+		padding: 0px 0px 20px 0px
 
 	.caption
 		display: flex
@@ -1887,8 +1899,13 @@ p
 /* CALCULATOR HOME PAGE STYLE SETTINGS START: */
 
 .section-calculator
-	margin: 97px auto
-	padding: 0px 0px 40px 0px
+
+	&.margin-empty
+		margin: 0px auto
+
+	&.border
+		border-top: 1px solid var(--color-dark-10)
+		border-bottom: 1px solid var(--color-dark-10)
 
 .container-calculator
 	.container-headers
@@ -1900,24 +1917,50 @@ p
 	display: flex
 	flex-direction: row
 
-	.container-calculator__col-01
-		width: 36%
-		height: auto
-		position: relative
+	&.option-01
+		.container-calculator__col-01
+			width: 36%
+			height: auto
+			position: relative
 
-		.background
-			width: 200%
-			height: 810px
-			position: absolute
-			right: 0%
-			bottom: -40px
-			z-index: 1
-			background-color: var(--color-dark-05)
+			.background
+				width: 200%
+				height: 810px
+				position: absolute
+				right: 0%
+				bottom: 0px
+				z-index: 1
+				background-color: var(--color-dark-05)
 
-	.container-calculator__col-02
-		width: 64%
-		height: auto
-		position: relative
+		.container-calculator__col-02
+			width: 64%
+			height: auto
+			position: relative
+
+	&.option-02
+		.container-calculator__col-01
+			width: 27%
+			height: auto
+			position: relative
+			padding: 32px 0px 20px 0px
+
+			.background
+				width: 200%
+				height: 100%
+				position: absolute
+				right: 0%
+				top: 0px
+				z-index: 1
+				background-color: var(--color-dark-05)
+				border-right: 1px solid var(--color-dark-10)
+
+		.container-calculator__col-02
+			width: 73%
+			height: auto
+			position: relative
+			display: flex
+			align-items: center
+			padding: 32px 0px
 
 .container-calculator__block
 	display: flex
@@ -1977,13 +2020,16 @@ p
 		background-color: var(--color-orange-100)
 		padding: 20px 10px
 
+		margin: 0px 0px 40px 0px
+
 		@include element_animation
 
 		&:hover
 			background-color: var(--color-orange-150)
 
 .container-calculator__list
-	padding: 0px 0px 0px 40px 
+	width: 100%
+	padding: 0px 0px 0px 48px 
 
 	& > p
 		font-family: var(--font-family-subtitle)
@@ -3063,4 +3109,1418 @@ p
 							text-transform: uppercase
 
 /* SIMILAR CARDS STYLE SETTINGS END. */
+
+
+
+/* NEWS PAGE STYLE SETTINGS START: */
+
+.section-news
+	margin: 96px auto
+
+.container-news
+	width: 100%
+	height: auto
+
+	.container-news__row-01
+		width: 100%
+		margin: 0px 0px 56px 0px
+
+	.container-news__row-02
+		width: 100%
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		gap: 32px
+		margin: 0px 0px 56px 0px
+
+		.press-item
+			width: auto
+			height: 480px
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+			text-decoration: none
+
+			background-color: var(--color-white)
+			padding: 48px 24px 40px 24px
+			border: 1px solid var(--color-dark-10)
+
+			@include element_animation
+
+			&:hover
+				background-color: var(--color-orange-100)
+				border-left: none
+
+				.press-item-body
+					h4, p
+						color: var(--color-white)
+
+				.press-item-footer
+					p, span
+						color: var(--color-white)
+
+			.press-item-body
+				display: flex
+				flex-direction: column
+				row-gap: 80px
+
+				h4
+					font-family: var(--font-family-title)
+					font-size: 26px
+					line-height: 34px
+					text-transform: uppercase
+					color: var(--color-dark-100)
+
+				p
+					font-family: var(--font-family-text)
+					font-weight: 300
+					font-size: 14px
+					line-height: 26px
+					color: var(--color-dark-40)
+
+			.press-item-footer
+				display: flex
+				justify-content: flex-end
+				align-items: flex-end
+
+				p
+					font-family: var(--font-family-title)
+					font-weight: 200
+					font-size: 48px
+					line-height: 48px
+					color: var(--color-dark-100)
+					text-transform: uppercase
+					text-align: right
+
+				span
+					display: inline-block
+					font-family: var(--font-family-subtitle)
+					font-weight: 400
+					font-size: 14px
+					line-height: 26px
+					color: var(--color-dark-40)
+					padding: 0px 0px 4px 8px
+
+	.container-news__row-03
+		width: 100%
+		display: flex
+		justify-content: center
+
+		.button
+			display: inline-block
+			width: 100%
+			max-width: 350px
+			font-family: var(--font-family-subtitle)
+			font-weight: 400
+			font-size: 14px
+			line-height: 24px
+			color: var(--color-orange-100)
+			text-transform: uppercase
+			text-decoration: none
+			text-align: center
+			letter-spacing: 0.56px
+
+			padding: 16px 20px
+			border: 1px solid var(--color-orange-100)
+			@include element_animation
+
+			&:hover
+				background-color: var(--color-orange-100)
+				color: var(--color-white)
+
+/* NEWS PAGE STYLE SETTINGS END. */
+
+
+
+/* POST PAGE STYLE SETTINGS START: */
+
+.section-post
+	margin: 96px auto
+
+.container-post
+	width: 100%
+	height: auto
+
+	.container-post__row-01
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+		column-gap: 30px
+		border-bottom: 1px solid var(--color-dark-10)
+		padding: 0px 0px 32px 0px
+		margin: 0px 0px 56px 0px
+
+		.container-headers
+			h2
+				font-size: 68px
+				line-height: 68px
+
+		.container-post__data
+			display: flex
+			flex-direction: column
+			align-items: center
+
+			p
+				font-family: var(--font-family-title)
+				font-weight: 200
+				font-size: 64px
+				line-height: 64px
+				letter-spacing: 2.56px
+				text-transform: uppercase
+				text-align: center
+				color: var(--color-orange-150)
+
+			span
+				font-family: var(--font-family-subtitle)
+				font-weight: 300
+				font-size: 14px
+				line-height: 24px
+				text-transform: uppercase
+				text-align: center
+				color: var(--color-orange-150)
+
+	.container-post__row-02
+		width: 100%
+		display: flex
+		flex-direction: column
+		row-gap: 40px
+
+		p
+			width: 64%
+			font-family: var(--font-family-text)
+			font-weight: 300
+			font-size: 18px
+			line-height: 36px
+			color: var(--color-dark-100)
+
+/* POST PAGE STYLE SETTINGS END. */
+
+
+
+/* CONTACTS PAGE STYLE SETTINGS START: */
+
+.section-contacts
+	border-bottom: 1px solid var(--color-dark-10)
+
+.container-contacts
+	width: 100%
+	display: flex
+
+	.container-contacts__column-01
+		width: 44.5%
+		position: relative
+		padding: 96px 48px 96px 0px
+
+		.container-contacts__row-01
+			width: 100%
+			margin: 0px 0px 72px 0px
+
+		.container-contacts__row-02
+			width: 100%
+			display: flex
+			flex-direction: column
+			row-gap: 32px
+
+	.container-contacts__column-02
+		width: 55.5%
+		position: relative
+
+.container-contacts__row-02
+	.container-contacts__text
+		h5
+			font-family: var(--font-family-subtitle)
+			font-weight: 300
+			font-size: 14px
+			line-height: 24px
+			color: var(--color-dark-40)
+			text-transform: uppercase
+			padding: 16px 0px
+			border-bottom: 1px solid var(--color-dark-10)
+
+		p
+			font-family: var(--font-family-text)
+			font-weight: 300
+			font-size: 18px
+			line-height: 24px
+			color: var(--color-dark-100)
+			margin: 20px 0px
+
+		a
+			display: block
+			font-family: var(--font-family-subtitle)
+			font-size: 18px
+			line-height: 18px
+			color: var(--color-dark-100)
+			text-decoration: none
+
+		span
+			display: block
+			font-family: var(--font-family-subtitle)
+			font-weight: 200
+			font-size: 12px
+			line-height: 16px
+			color: var(--color-dark-50)
+			text-transform: uppercase
+			margin: 8px 0px 0px 0px
+
+	.container-contacts__media
+		display: flex
+		flex-direction: row
+		margin: 16px 0px 30px 0px
+
+		div
+			&:nth-child(1)
+				width: 100%
+				border: 1px solid var(--color-dark-10)
+				border-right: 0px
+
+			&:nth-child(2)
+				border: 1px solid var(--color-dark-10)
+				border-right: 0px
+
+			&:nth-child(3)
+				border: 1px solid var(--color-dark-10)
+
+		a
+			display: block
+			text-decoration: none
+			padding: 22px 24px
+			background-color: transparent
+			text-align: center
+			@include element_animation
+
+			&:hover
+				background-color: var(--color-dark-03)
+
+			span
+				font-family: var(--font-family-subtitle)
+				font-weight: 400
+				font-size: 14px
+				line-height: 20px
+				color: var(--color-dark-100)
+				text-transform: uppercase
+
+.container-contacts__map-block
+	width: 130%
+	height: 100%
+	position: relative
+	background-color: var(--color-dark-10)
+
+/* CONTACTS PAGE STYLE SETTINGS END. */
+
+
+
+/* ABOUT STYLE SETTINGS START: */
+
+.section-about
+	margin: 96px auto
+
+.container-about
+	.container-about__row-02
+		margin: 0px 0px 56px 0px
+		p
+			font-family: var(--font-family-subtitle)
+			font-weight: 300
+			font-size: 42px
+			line-height: 58px
+			color: var(--color-dark-40)
+			text-transform: uppercase
+			letter-spacing: 0.84px
+
+			strong
+				font-weight: 300
+				color: var(--color-dark-100)
+
+	.container-about__row-03
+		.container-about__grid
+			width: 100%
+			display: grid
+			grid-template-columns: repeat(3, 1fr)
+			grid-template-rows: 360px 420px 360px
+
+			.container-about__grid-item
+				position: relative
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+				padding: 0px 80px
+
+				&.no-padding
+					padding: 0px 0px
+
+				&:nth-child(1)
+					border-right: 1px solid var(--color-dark-10)
+					border-bottom: 1px solid var(--color-dark-10)
+
+					&:after
+						content: ''
+						width: 100px
+						height: 100px
+						background-color: var(--color-white)
+						position: absolute
+						right: -50px
+						bottom: -50px
+						z-index: 3
+
+				&:nth-child(2)
+					border-right: 1px solid var(--color-dark-10)
+					border-bottom: 1px solid var(--color-dark-10)
+
+					&:after
+						content: ''
+						width: 100px
+						height: 100px
+						background-color: var(--color-white)
+						position: absolute
+						right: -50px
+						bottom: -50px
+						z-index: 3
+
+				&:nth-child(3)
+					border-bottom: 1px solid var(--color-dark-10)
+
+				&:nth-child(4)
+					border-right: 1px solid var(--color-dark-10)
+					border-bottom: 1px solid var(--color-dark-10)
+
+					&:after
+						content: ''
+						width: 100px
+						height: 100px
+						background-color: var(--color-white)
+						position: absolute
+						right: -50px
+						bottom: -50px
+						z-index: 3
+
+				&:nth-child(5)
+					grid-column-start: 2
+					grid-column-end: 4
+
+				&:nth-child(6)
+					border-right: 1px solid var(--color-dark-10)
+					border-top: 1px solid var(--color-dark-10)
+
+					&:after
+						content: ''
+						width: 100px
+						height: 100px
+						background-color: var(--color-white)
+						position: absolute
+						right: -50px
+						top: -50px
+						z-index: 3
+
+				&:nth-child(7)
+					border-right: 1px solid var(--color-dark-10)
+					border-top: 1px solid var(--color-dark-10)
+
+					&:after
+						content: ''
+						width: 100px
+						height: 100px
+						background-color: var(--color-white)
+						position: absolute
+						right: -50px
+						top: -50px
+						z-index: 3
+
+				&:nth-child(8)
+					border-top: 1px solid var(--color-dark-10)
+
+				p
+					&.color_dark
+						color: var(--color-dark-100)
+
+					&.color_gray
+						color: var(--color-dark-50)
+
+					&.color_orange
+						color: var(--color-orange-100)
+
+					&.caption
+						font-family: var(--font-family-subtitle)
+						font-weight: 300
+						font-size: 14px
+						line-height: 24px
+						text-transform: uppercase
+
+					&.number
+						font-family: var(--font-family-title)
+						font-weight: 300
+						font-size: 88px
+						line-height: 88px
+						text-transform: uppercase
+
+					&.text
+						font-family: var(--font-family-text)
+						font-weight: 300
+						font-size: 16px
+						line-height: 28px
+
+
+				.container-about__grid-slider
+					width: 100%
+					height: 100%
+					display: flex
+					flex-direction: row
+					align-items: flex-start
+					column-gap: 45px
+					padding: 80px 0px 0px 80px
+
+					.container-about__grid-column
+						&:first-child
+							width: calc(100% - 215px)
+
+						&:last-child
+							width: 170px
+
+						.owl-item
+							transition-duration: 2s
+							transition-timing-function: ease-in-out
+							opacity: 0
+
+							&.active
+								opacity: 1
+
+						.grid-slider__item
+							width: calc(100% - 90px)
+
+							p
+								&.text
+									margin: 40px 0px 0px 0px
+
+						.container-about__slider-navigation
+							.button
+								border: 1px solid var(--color-dark-10)
+
+								&.button-prev
+									background-color: transparent
+
+									.img-svg path
+										stroke: var(--color-dark-100)
+
+									&:hover
+										background-color: var(--color-dark-03)
+
+								&.button-next
+									background-color: transparent
+									
+									.img-svg path
+										stroke: var(--color-dark-100)
+
+									&:hover
+										background-color: var(--color-dark-03)
+
+/* ABOUT STYLE SETTINGS END. */
+
+
+
+/* VALUES STYLE SETTINGS START: */
+
+.section-values
+	margin: 96px auto 56px auto
+	background-color: var(--color-orange-150)
+
+.container-values
+	width: 100%
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+
+	.container-values__col
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		row-gap: 210px
+		border-right: 1px solid rgba(255, 255, 255, 0.32)
+		padding: 96px 75px
+
+		&:last-child
+			border: none
+
+		span
+			width: 100%
+			display: inline-block
+			font-family: var(--font-family-subtitle)
+			font-weight: 300
+			font-size: 14px
+			line-height: 24px
+			text-transform: uppercase
+			color: var(--color-white)
+			padding: 0px 0px 16px 0px
+			border-bottom: 1px solid rgba(255, 255, 255, 0.32)
+
+		h5
+			font-family: var(--font-family-title)
+			font-weight: 300
+			font-size: 32px
+			line-height: 34px
+			margin: 45px 0px
+			text-transform: uppercase
+			color: var(--color-white)
+
+		p
+			font-family: var(--font-family-text)
+			font-weight: 300
+			font-size: 16px
+			line-height: 28px
+			color: var(--color-white)
+
+		.container-headers
+			border-top: 1px solid rgba(255, 255, 255, 0.32)
+			padding: 32px 0px 0px 0px
+
+			h2, p, a
+				color: var(--color-white)
+
+/* VALUES STYLE SETTINGS END. */
+
+
+
+/* TEAM STYLE SETTINGS START: */
+
+.section-team
+	margin: 56px auto
+
+.container-team
+	width: 100%
+	display: grid
+	grid-template-columns: 1fr 2fr
+
+	.container-team__col-01
+		display: flex
+		flex-direction: column
+		row-gap: 48px
+		padding: 40px 48px 40px 0px
+		border-right: 1px solid var(--color-dark-10)
+
+		& > p
+			font-family: var(--font-family-text)
+			font-weight: 300
+			font-size: 16px
+			line-height: 28px
+			color: var(--color-dark-100)
+
+		.container-team__info-block
+			span
+				font-family: var(--font-family-title)
+				font-weight: 200
+				font-size: 68px
+				line-height: 68px
+				text-transform: uppercase
+				letter-spacing: 2.72px
+				color: var(--color-dark-100)
+
+			p
+				font-family: var(--font-family-subtitle)
+				font-weight: 300
+				font-size: 14px
+				line-height: 24px
+				text-transform: uppercase
+				color: var(--color-dark-40)
+				margin: 8px 0px 0px 0px
+
+	.container-team__col-02
+		.container-team__list
+			width: 100%
+			display: grid
+			grid-template-columns: 1fr 1fr
+
+			.container-team__list-col-01
+				display: flex
+				flex-direction: column
+				row-gap: 88px
+				border-right: 1px solid var(--color-dark-10)
+				padding: 40px 48px 100px 48px
+
+			.container-team__list-col-02
+				display: flex
+				flex-direction: column
+				row-gap: 88px
+				padding: 100px 48px 100px 48px
+
+			.container-team__item
+				.container-team__item-view
+					.head
+						height: 460px
+						margin: 0px 20px
+						position: relative
+
+						img
+							width: 100%
+							height: 100%
+							position: absolute
+							left: 50%
+							top: 50%
+							transform: translate(-50%, -50%)
+							object-fit: cover
+
+					.body
+						width: 100%
+						display: flex
+						justify-content: space-between
+						align-items: center
+						column-gap: 30px
+						margin: 20px 0px 0px 0px
+
+						h4
+							font-family: var(--font-family-title)
+							font-weight: 300
+							font-size: 32px
+							line-height: 40px
+							text-transform: uppercase
+							color: var(--color-dark-100)
+							margin: 0px 0px 5px 0px
+
+						span
+							font-family: var(--font-family-text)
+							font-weight: 300
+							font-size: 14px
+							line-height: 16px
+							color: var(--color-dark-50)
+
+						a.open-team-modal
+							width: 64px
+							height: 64px
+							display: flex
+							justify-content: center
+							align-items: center
+							border: 1px solid var(--color-dark-10)
+							background-color: var(--color-white)
+							border-radius: 50px
+							cursor: pointer
+							@include element_animation
+
+							&:hover
+								background-color: var(--color-orange-100)
+
+								.img-svg path
+									stroke: var(--color-white)
+
+.container-team__item-modal
+	width: 100%
+	max-width: 960px
+	display: flex
+	background-color: var(--color-white)
+	margin: 0px auto
+
+	.container-team__item-modal__col-01
+		width: 50%
+		display: flex
+		flex-direction: column
+		row-gap: 48px
+		padding: 32px 48px 70px 32px
+
+		.head
+			a.close-team-modal
+				width: 64px
+				height: 64px
+				display: inline-flex
+				justify-content: center
+				align-items: center
+				border: 1px solid var(--color-dark-10)
+				background-color: var(--color-white)
+				border-radius: 50px
+				cursor: pointer
+				@include element_animation
+
+				&:hover
+					background-color: var(--color-dark-03)
+
+					// .img-svg path
+					// 	stroke: var(--color-white)
+
+			h4
+				font-family: var(--font-family-title)
+				font-weight: 200
+				font-size: 88px
+				line-height: 88px
+				text-transform: uppercase
+				color: var(--color-dark-100)
+				margin: 30px 0px 20px 0px
+
+			span
+				font-family: var(--font-family-text)
+				font-weight: 300
+				font-size: 16px
+				line-height: 16px
+				color: var(--color-dark-50)
+
+		.body
+			p
+				font-family: var(--font-family-text)
+				font-weight: 300
+				font-size: 16px
+				line-height: 28px
+				color: var(--color-dark-100)
+				margin: 0px 0px 25px 0px
+
+	.container-team__item-modal__col-02
+		width: 50%
+		height: auto
+		position: relative
+
+		img
+			width: 100%
+			height: 100%
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			object-fit: cover
+
+/* TEAM STYLE SETTINGS END. */
+
+
+
+/* FEEDBACK 02 STYLE SETTINGS START: */
+
+.section-feedback-02
+	margin: 96px auto
+
+	.container-feedback
+		width: 100%
+		display: grid
+		grid-template-columns: 2fr 1fr
+
+		.container-feedback-col-01
+			width: 100%
+			height: 600px
+			position: relative
+
+		.container-feedback-col-02
+			width: 100%
+			height: 600px
+			position: relative
+
+	.container-feedback-col-01
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		background-color: var(--color-orange-150)
+
+		.background
+			width: 180%
+			height: 100%
+			position: absolute
+			left: -100%
+			top: 0px
+			z-index: 1
+			background-color: var(--color-orange-150)
+
+		.container-feedback__block-head
+			width: 100%
+			height: 360px
+			position: relative
+			z-index: 2
+			padding: 64px 40px 0px 0px
+
+			h2
+				color: var(--color-white)
+
+			.caption
+				p, a, h2
+					color: var(--color-white)
+
+		.container-feedback__block-body
+			position: relative
+			z-index: 2
+
+			p
+				font-family: var(--font-family-text)
+				font-weight: 300
+				font-size: 16px
+				line-height: 28px
+				color: var(--color-white)
+
+			a
+				display: inline-block
+				font-family: var(--font-family-subtitle)
+				font-weight: 400
+				font-size: 14px
+				line-height: 24px
+				color: var(--color-white)
+				text-transform: uppercase
+				text-decoration: none
+				margin: 16px 0px 0px 0px
+				border-bottom: 1px solid rgba(255, 255, 255, 0.32)
+				@include element_animation
+
+				&:hover
+					border-bottom: 1px solid rgba(255, 255, 255, 0.64)
+
+		.container-feedback__block-footer
+			position: relative
+			z-index: 2
+			padding: 64px 48px 48px 0px
+
+			form
+				width: 100%
+				display: flex
+
+				input
+					flex: 1
+					height: 64px
+					font-family: var(--font-family-subtitle)
+					font-weight: 400
+					font-size: 14px
+					line-height: 24px
+					color: var(--color-white)
+					text-transform: uppercase
+
+					background-color: var(--color-orange-150)
+					padding: 20px 16px
+					border: 1px solid rgba(255, 255, 255, 0.32)
+					border-right: none
+					outline: none
+
+					@include element_animation
+
+					&::placeholder
+						font-family: var(--font-family-subtitle)
+						font-weight: 400
+						font-size: 14px
+						line-height: 24px
+						color: rgba(255, 255, 255, 0.32)
+						text-transform: uppercase
+
+					&:hover
+						border: 1px solid rgba(255, 255, 255, 0.50)
+
+				button
+					flex: 3
+					height: 64px
+					font-family: var(--font-family-subtitle)
+					font-weight: 400
+					font-size: 14px
+					line-height: 24px
+					color: var(--color-white)
+					text-transform: uppercase
+
+					background-color: var(--color-orange-150)
+					padding: 20px 16px
+					border: 1px solid rgba(255, 255, 255, 0.32)
+					outline: none
+					cursor: pointer
+
+					@include element_animation
+
+					&:hover
+						background-color: var(--color-orange-100)
+						border: none
+
+	.container-feedback-col-02
+		a
+			display: block
+			text-decoration: none
+			position: relative
+			z-index: 2
+			@include element_animation
+
+			&:hover
+				.container-feedback__block-head
+					img
+						max-width: 300px
+
+				.container-feedback__block-body
+					div
+						span
+							background-color: var(--color-orange-100)
+
+							.img-svg path
+								stroke: var(--color-white)
+
+			.container-feedback__block-head
+				width: 100%
+				height: 350px
+				display: flex
+				justify-content: center
+				align-items: center
+				padding: 72px 36px 0px 32px
+
+				img
+					width: 100%
+					max-width: 270px
+					@include element_animation
+
+			.container-feedback__block-body
+				width: 100%
+				height: 250px
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				padding: 0px 36px 48px 32px
+
+				h5
+					font-family: var(--font-family-title)
+					font-weight: 300
+					font-size: 30px
+					line-height: 38px
+					color: var(--color-dark-100)
+					text-transform: uppercase
+
+				div
+					display: flex
+					justify-content: space-between
+					align-items: center
+
+					p
+						font-family: var(--font-family-text)
+						font-weight: 300
+						font-size: 15px
+						line-height: 24px
+						color: var(--color-dark-50)
+
+					span
+						width: 64px
+						height: 64px
+						border-radius: 50%
+						background-color: var(--color-white)
+						display: flex
+						justify-content: center
+						align-items: center
+						@include element_animation
+
+	
+
+	.container-feedback-col-02
+		& > div
+			width: 180%
+			height: 100%
+			position: absolute
+			right: -100%
+			top: 0px
+			z-index: 1
+			background-color: var(--color-dark-05)
+
+/* FEEDBACK 02 STYLE SETTINGS END. */
+
+
+
+/* GALLERY STYLE SETTINGS START: */
+
+.section-gallery
+	width: 100%
+	min-height: 810px
+	background-color: rgba(0, 0, 0, 0.5)
+	padding: 40px 0px
+
+.container-gallery
+	.container-gallery__row-01
+		margin: 180px 0px 95px 0px
+
+		.container-headers
+			h2
+				font-size: 80px
+				line-height: 88px
+				color: var(--color-white)
+
+				span
+					font-size: 132px
+					line-height: 132px
+					font-weight: 400
+
+	.container-gallery__row-02
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+
+		div
+			display: flex
+			justify-content: space-between
+			align-items: center
+			column-gap: 16px
+
+		span
+			font-family: var(--font-family-subtitle)
+			font-weight: 300
+			font-size: 14px
+			line-height: 24px
+			color: rgba(255, 255, 255, 0.32)
+			text-transform: uppercase
+
+		a
+			width: 56px
+			height: 56px
+			border-radius: 50%
+			border: 1px solid rgba(255, 255, 255, 0.16)
+
+			display: flex
+			justify-content: center
+			align-items: center
+
+		p
+			font-family: var(--font-family-subtitle)
+			font-weight: 300
+			font-size: 16px
+			line-height: 30px
+			color: var(--color-white)
+			text-transform: uppercase
+
+			padding: 24px 0px 0px 0px
+			border-top: 1px solid rgba(255, 255, 255, 0.16)
+
+/* GALLERY STYLE SETTINGS END. */
+
+
+
+/* APPLICATION FROM STYLE SETTINGS START: */
+
+.section-application
+	width: 100%
+	max-width: none
+	height: 100vh
+
+	position: fixed
+	top: 0px
+	right: 0px
+	z-index: 6
+	border-top: 1px solid var(--color-dark-10)
+
+	visibility: hidden
+	opacity: 0
+
+	&.active
+		visibility: visible
+		opacity: 1
+
+	.wrapper-menu
+		height: 100%
+
+.container-application
+	width: 100%
+	height: 100vh
+	display: flex
+	justify-content: space-between
+	position: relative
+
+	.container-application__col-01
+		width: 59%
+		height: 100%
+		position: relative
+
+	.container-application__col-02
+		width: 41%
+		height: 100%
+		position: relative
+		z-index: 10
+
+.container-application__background-01.active
+	width: 100%
+	height: 100vh
+	position: fixed
+	top: 0px
+	left: 0px
+	z-index: 7
+	background-color: rgba(0, 0, 0, 0.3)
+
+.container-application__background-02
+	width: 150%
+	height: 100%
+	position: absolute
+	left: 0px
+	top: 0px
+	z-index: 8
+	background-color: rgb(255, 255, 255)
+
+.container-application__col-02
+	width: 100%
+	height: 100%
+
+	transform: translateX(150%)
+	transition-duration: 0.4s
+
+	&.active
+		transform: translateX(0%)
+
+	.container-application__content
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		row-gap: 30px
+		overflow-y: auto
+		padding: 55px 0px 40px 48px
+
+		&::-webkit-scrollbar
+			width: 3px
+			border-radius: 5px
+
+
+		&::-webkit-scrollbar-thumb
+			background: var(--color-orange-100)
+
+
+		&::-webkit-scrollbar-corner
+			background-color: var(--color-orange-100)
+
+	
+		.container-application__head
+			width: 100%
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+
+			position: relative
+			z-index: 10
+			margin: 0px 0px 40px 0px
+
+			.container-application__close
+				min-width: 56px
+				min-height: 56px
+				border-radius: 50%
+				border: 1px solid var(--color-dark-10)
+				cursor: pointer
+
+				display: flex
+				justify-content: center
+				align-items: center
+
+		.container-application__body
+			position: relative
+			z-index: 10
+
+			p
+				font-family: var(--font-family-text)
+				font-weight: 300
+				font-size: 18px
+				line-height: 28px
+				color: var(--color-dark-50)
+				margin: 0px 0px 40px 0px
+
+			.container-application__body-form
+				width: 100%
+				display: flex
+				flex-direction: column
+				row-gap: 16px
+
+				input
+					width: 100%
+					height: 56px
+					background-color: var(--color-white)
+					border: 1px solid var(--color-dark-10)
+					padding: 12px 17px
+					position: relative
+
+					font-family: var(--font-family-subtitle)
+					font-size: 14px
+					line-height: 24px
+					color: var(--color-dark-100)
+					text-transform: uppercase
+					outline: none
+
+					&::placeholder
+						font-family: var(--font-family-subtitle)
+						font-size: 14px
+						line-height: 24px
+						color: var(--color-dark-30)
+						text-transform: uppercase
+
+					&::-webkit-outer-spin-button,
+					&::-webkit-inner-spin-button
+						-webkit-appearance: none
+
+				.button
+					width: 100%
+					height: 64px
+					display: inline-block
+					font-family: var(--font-family-subtitle)
+					font-weight: 400
+					font-size: 14px
+					color: var(--color-white)
+					text-transform: uppercase
+					text-decoration: none
+					text-align: center
+					background-color: var(--color-orange-100)
+					padding: 16px 10px
+
+					outline: none
+					border: none
+					cursor: pointer
+
+					@include element_animation
+
+					&:hover
+						background-color: var(--color-orange-150)
+
+		.container-application__footer
+			position: relative
+			z-index: 10
+
+			p
+				font-family: var(--font-family-subtitle)
+				font-weight: 300
+				font-size: 12px
+				line-height: 24px
+				color: var(--color-dark-50)
+				text-transform: uppercase
+
+				a
+					color:  var(--color-orange-100)
+					text-decoration: none
+
+/* APPLICATION FROM STYLE SETTINGS END. */
+
+
+
+
+
+
+
+
+.section-preloader
+	width: 100%
+	height: 100vh
+	position: fixed
+	left: 0px
+	top: 0px
+	z-index: 100
+
+	.wrapper-preloader
+		width: 100%
+		height: 100%
+
+.container-preloader
+	width: 100%
+	height: 100%
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding: 40px 0px
+
+.container-preloader__animation
+	width: 100%
+	height: 100%
+	display: flex
+	justify-content: center
+	align-items: center
+	position: relative
+	z-index: 102
+
+	div
+		width: 100%
+		max-width: 330px
+
+.container-preloader__block
+	position: relative
+	z-index: 102
+
+	.container-preloader__progress
+		margin: 30px 0px 24px 0px
+
+		.track
+			width: 100%
+			height: 1px
+			background-color: rgba(255, 255, 255, 0.16)
+
+		.progress
+			width: 0%
+			height: 1px
+			background-color: var(--color-orange-100)
+			position: relative
+			bottom: 1px
+			transition-duration: 3s
+
+	.container-preloader__block-text
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		.container-preloader__item
+			p
+				font-family: var(--font-family-subtitle)
+				font-size: 14px
+				line-height: 24px
+				color: var(--color-white)
+				text-transform: uppercase
+
+.container-preloader__background
+	width: 100%
+	height: 100vh
+	position: absolute
+	left: 0px
+	top: 0px
+	z-index: 101
+	display: grid
+	grid-template-columns: repeat(8, 1fr)
+
+	div
+		width: 100%
+		height: 100%
+		background-color: var(--color-dark-150)
+		transition-timing-function: ease-in-out
+		transition-duration: 0.5s
+
+		&:nth-child(1)
+			transform: translateY(0%)
+			transition-delay: 2s
+
+		&:nth-child(2)
+			transform: translateY(0%)
+			transition-delay: 1.5s
+
+		&:nth-child(3)
+			transform: translateY(0%)
+			transition-delay: 1s
+
+		&:nth-child(4)
+			transform: translateY(0%)
+			transition-delay: 0.5s
+
+		&:nth-child(5)
+			transform: translateY(0%)
+			transition-delay: 0.5s
+
+		&:nth-child(6)
+			transform: translateY(0%)
+			transition-delay: 1s
+
+		&:nth-child(7)
+			transform: translateY(0%)
+			transition-delay: 1.5s
+
+		&:nth-child(8)
+			transform: translateY(0%)
+			transition-delay: 2s
+
+	&.active
+		div
+			&:nth-child(1)
+				transform: translateY(-100%)
+				transition-delay: 1.1s
+
+			&:nth-child(2)
+				transform: translateY(-100%)
+				transition-delay: 0.9s
+
+			&:nth-child(3)
+				transform: translateY(-100%)
+				transition-delay: 0.7s
+
+			&:nth-child(4)
+				transform: translateY(-100%)
+				transition-delay: 0.5s
+
+			&:nth-child(5)
+				transform: translateY(100%)
+				transition-delay: 0.5s
+
+			&:nth-child(6)
+				transform: translateY(100%)
+				transition-delay: 0.7s
+
+			&:nth-child(7)
+				transform: translateY(100%)
+				transition-delay: 0.9s
+
+			&:nth-child(8)
+				transform: translateY(100%)
+				transition-delay: 1.1s
+
+
 

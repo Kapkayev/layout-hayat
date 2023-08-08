@@ -21,6 +21,46 @@
 </head>
 <body>
 
+<section class="wrapper-full section-preloader">
+	<div class="wrapper-fix wrapper-preloader">
+		<div class="container-preloader">
+			<div class="container-preloader__animation">
+				<div>
+					<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+    				<lottie-player src="https://lottie.host/210dd1db-b0eb-4296-852a-f57cd0bc0cdd/LGFM38yVBI.json" background="transparent" speed="1" autoplay></lottie-player>
+    			</div>
+			</div>
+			<div class="container-preloader__block">
+				<div class="container-preloader__progress">
+					<div class="track"></div>
+					<div class="progress" id="progress"></div>
+				</div>
+				<div class="container-preloader__block-text">
+					<div class="container-preloader__item">
+						<p>
+							<span id="indicator">100</span>
+							<span>%</span>
+						</p>
+					</div>
+					<div class="container-preloader__item">
+						<p>идет загрузка...</p>
+					</div>
+				</div>
+			</div>
+			<div class="container-preloader__background">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <header class="wrapper-full section-header light-theme">
 	<div class="wrapper-fix wrapper-header">
 		<div class="container-header">
@@ -88,7 +128,7 @@
 						</nav>
 					</div>
 					<div>
-						<div class="navigation-block__phone">
+						<div class="navigation-block__phone application-modal-toggle">
 							<a href="#">
 								<span>+7 705 924 97 88</span>
 								<img src="media/icons/icon_phone.svg" class="img-svg" alt="">
@@ -177,6 +217,51 @@
 					</div>
 				</div>
 
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="wrapper-full section-application">
+	<div class="wrapper-fix wrapper-application">
+		<div class="container-application">
+			<div class="container-application__col-01">
+				<div class="container-application__background-01"></div>
+			</div>
+			<div class="container-application__col-02">
+				<div class="container-application__background-02"></div>
+				<div class="container-application__content">
+
+					<div>
+						<div class="container-application__head">
+							<div class="container-headers">
+								<h2>оставить <span>заявку</span></h2>
+							</div>
+							<div class="container-application__close application-modal-toggle">
+								<img src="media/icons/icon_close.svg" alt="Закрыть" class="img-svg">
+							</div>
+						</div>
+
+						<div class="container-application__body">
+							
+							<p>Получите оперативную и подробную консультацию <br> от нашего специалиста</p>
+
+							<form class="container-application__body-form">
+								<input type="text" name="name" placeholder="Ваше имя">
+								<input type="number" name="number" placeholder="номер телефона">
+								<button class="button">оставить заявку</button>
+							</form>
+
+						</div>
+					</div>
+
+					<div class="container-application__footer">
+						<p>
+							НАЖИМАЯ НА КНОПКУ «ОТПРАВИТЬ ЗАЯВКУ», ВЫ ПРИНИМАЕТЕ <a href="#">УСЛОВИЯ</a> ОБРАБОТКИ ДАННЫХ
+						</p>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>
@@ -824,7 +909,7 @@
 				<h2>рассчитать <span>ипотеку</span></h2>
 			</div>
 
-			<div class="container-calculator__row">
+			<div class="container-calculator__row option-01">
 				<div class="container-calculator__col-01">
 					<div class="container-calculator__block">
 						
@@ -1255,6 +1340,8 @@
 <script src="script/nouislider.js"></script>
 <!-- Custom-select.js -->
 <script src="script/custom-select.min.js"></script>
+<!-- Spincrement -->
+<script src="script/jquery.spincrement.js"></script>
 <!-- Magnific Popup -->
 <script src="script/magnific-popup.js"></script>
 <!-- jQuery.Maskedinput -->
