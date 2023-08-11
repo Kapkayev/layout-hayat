@@ -20,4 +20,7 @@
   --color-gold-150: #B89049;
   --color-white: #FFFFFF;
   --color-black: #000000;
+  --gap: 32px;
+  --card-width: clamp(280px, 20vw, 100vw);
+  --card-height: calc(var(--card-width) * (7 / 5));
 }

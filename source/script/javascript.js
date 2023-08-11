@@ -22,8 +22,7 @@ jQuery(window).on('load', function () {
         jQuery(".section-preloader").fadeOut();
         jQuery('html').css('overflowY', 'auto');
     }, 6000)
-
-        
+   
  })
 
 /*--------------------------------------------------------------
@@ -692,3 +691,112 @@ jQuery(document).on('click', '.close-team-modal', function (e) {
 --------------------------------------------------------------*/
 
 
+
+/*--------------------------------------------------------------
+>>> SCROLL ANIMATION CODE START:
+--------------------------------------------------------------*/
+
+/* Animation after scroll code start: */
+
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+      change.target.classList.add('active');
+    }
+  });
+}
+
+let options = { threshold: [0.5] };
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('.animate-element');
+
+for (let elm of elements) {
+  observer.observe(elm);
+}
+
+/* Animation after scroll code end:. */
+
+
+/* ScrollTrigger code start: */
+
+let sectionHeightGallery = jQuery('.section-gallery').height(),
+    sectionHeightAbout = jQuery('.section-about').height(),
+    sectionHeightValues = jQuery('.section-values').height(),
+    sectionHeightTeam = jQuery('.section-team').height();
+
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+    trigger: ".container-about",
+    start: `${(sectionHeightAbout / 2)}px`,
+    end: `+=${(sectionHeightAbout / 2)}px`,
+    markers: false,
+    pinSpacing: false,
+    pin: true,
+})
+
+ScrollTrigger.create({
+    trigger: ".container-team__col-01",
+    start: `top`,
+    end: `bottom`,
+    markers: false,
+    pinSpacing: false,
+    pin: true,
+})
+
+/* ScrollTrigger code end. */
+
+/*--------------------------------------------------------------
+>>> SCROLL ANIMATION CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> CUSTOM SCROLL CODE START:
+--------------------------------------------------------------*/
+
+let cursor = document.querySelector('.cursor');
+let a = document.querySelectorAll('a');
+let buttons = document.querySelectorAll('.button');
+
+document.addEventListener('mousemove', function(e){
+  let x = e.clientX;
+  let y = e.clientY;
+  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+});
+
+document.addEventListener('mousemove', function(e){
+  let x = e.clientX;
+  let y = e.clientY;
+});
+
+document.addEventListener('mousedown', function(){
+  cursor.classList.add('click');
+});
+
+document.addEventListener('mouseup', function(){
+  cursor.classList.remove('click')
+});
+
+a.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    cursor.classList.add('hover');
+  });
+  item.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+  });
+})
+
+buttons.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    cursor.classList.add('hover');
+  });
+  item.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+  });
+})
+
+/*--------------------------------------------------------------
+>>> CUSTOM SCROLL CODE END.
+--------------------------------------------------------------*/
