@@ -66,12 +66,17 @@ jQuery('.title-slider-image').owlCarousel({
     touchDrag: false,
     mouseDrag: false,
     nav: false,
-    dots: false,
+    dots: true,
     autoWidth: false,
     autoHeight: false,
     autoplay: false,
     items:1,
     smartSpeed: 1500,
+    dotsContainer: '.slider-progress__dots',
+    onInitialized: function(e) {
+        jQuery('.slider-counter').text( '01')
+        jQuery('.slider-number').text(' / 0' + this.items().length)
+    }
 })
 
 jQuery('.title-slider-text').owlCarousel({
@@ -102,6 +107,11 @@ jQuery('#owl-title-next').click(function() {
     owlTitleImageSlider.trigger('next.owl.carousel');
     owlTitleTextSlider.trigger('next.owl.carousel');
 })
+
+jQuery('.title-slider-image').on('changed.owl.carousel', function(e) {
+    jQuery('.slider-counter').text('0' + ++e.page.index)
+    jQuery('.slider-number').text(' / 0' + e.item.count)
+});
 
 /*--------------------------------------------------------------
 >>> TITLE SLIDER CODE END.
@@ -756,46 +766,46 @@ ScrollTrigger.create({
 >>> CUSTOM SCROLL CODE START:
 --------------------------------------------------------------*/
 
-let cursor = document.querySelector('.cursor');
-let a = document.querySelectorAll('a');
-let buttons = document.querySelectorAll('.button');
+// let cursor = document.querySelector('.cursor');
+// let a = document.querySelectorAll('a');
+// let buttons = document.querySelectorAll('.button');
 
-document.addEventListener('mousemove', function(e){
-  let x = e.clientX;
-  let y = e.clientY;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-});
+// document.addEventListener('mousemove', function(e){
+//   let x = e.clientX;
+//   let y = e.clientY;
+//   cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+// });
 
-document.addEventListener('mousemove', function(e){
-  let x = e.clientX;
-  let y = e.clientY;
-});
+// document.addEventListener('mousemove', function(e){
+//   let x = e.clientX;
+//   let y = e.clientY;
+// });
 
-document.addEventListener('mousedown', function(){
-  cursor.classList.add('click');
-});
+// document.addEventListener('mousedown', function(){
+//   cursor.classList.add('click');
+// });
 
-document.addEventListener('mouseup', function(){
-  cursor.classList.remove('click')
-});
+// document.addEventListener('mouseup', function(){
+//   cursor.classList.remove('click')
+// });
 
-a.forEach(item => {
-  item.addEventListener('mouseover', () => {
-    cursor.classList.add('hover');
-  });
-  item.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-})
+// a.forEach(item => {
+//   item.addEventListener('mouseover', () => {
+//     cursor.classList.add('hover');
+//   });
+//   item.addEventListener('mouseleave', () => {
+//     cursor.classList.remove('hover');
+//   });
+// })
 
-buttons.forEach(item => {
-  item.addEventListener('mouseover', () => {
-    cursor.classList.add('hover');
-  });
-  item.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-})
+// buttons.forEach(item => {
+//   item.addEventListener('mouseover', () => {
+//     cursor.classList.add('hover');
+//   });
+//   item.addEventListener('mouseleave', () => {
+//     cursor.classList.remove('hover');
+//   });
+// })
 
 /*--------------------------------------------------------------
 >>> CUSTOM SCROLL CODE END.

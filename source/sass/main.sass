@@ -20,7 +20,7 @@ body
 	scroll-behavior: smooth
 	-webkit-font-smoothing: antialiased
 	background-color: var(--color-white)
-	cursor: none
+	// cursor: none
 
 	&::-webkit-scrollbar
 		width: 3px
@@ -51,11 +51,11 @@ p
 	color: var(--color-dark-100)
 
 a
-	cursor: none
+	// cursor: none
 
 @mixin element_animation
 	transition-timing-function: ease-in-out
-	transition-duration: 0.2s
+	transition-duration: 0.3s
 
 /* BASE STYLE SETTINGS END. */
 
@@ -130,8 +130,14 @@ a
 
 			.navigation-block__phone,
 			.navigation-block__profile
-				.img-svg path
-					stroke: var(--color-white)
+				.img-svg 
+					path
+						stroke: var(--color-white)
+
+					&:hover
+						path
+							stroke: var(--color-orange-150)
+
 
 			.navigation-block__burger-menu
 				.img-svg path
@@ -291,6 +297,11 @@ a
 				line-height: 20px
 				text-transform: uppercase
 
+			svg
+				&:hover
+					path
+						stroke: var(--color-orange-150)
+
 	.navigation-block__profile
 		height: 20px
 
@@ -300,8 +311,10 @@ a
 			align-items: center
 			text-decoration: none
 
-			img
-				cursor: pointer
+			svg
+				&:hover
+					path
+						stroke: var(--color-orange-150)
 
 	.navigation-block__burger-menu
 		display: flex
@@ -429,6 +442,9 @@ a
 				.slider-navigation
 					padding: 0px 40px 40px 0px
 
+				.slider-progress
+					display: none
+
 
 		.container-title__information
 			width: 27%
@@ -479,7 +495,7 @@ a
 				position: relative
 				width: 100%
 				height: 275px
-				padding: 32px 32px
+				padding: 32px 0px 32px 32px
 
 				& > div
 					width: 180%
@@ -509,8 +525,7 @@ a
 					z-index: 2
 
 					display: flex
-					justify-content: space-between
-					flex-shrink: 0
+					justify-content: flex-start
 
 					div, a
 						width: 60px
@@ -582,6 +597,9 @@ a
 					.slider-navigation
 						padding: 0px 0px 40px 0px
 
+					.slider-progress
+						display: none
+
 /* Full width title option styles end. */
 
 
@@ -619,6 +637,48 @@ a
 				background-color: var(--color-orange-100)
 
 /* Slider navigation styles end. */
+
+
+/* Slider progress styles start: */
+
+.slider-progress
+	width: 100%
+	display: flex
+	align-items: flex-end
+	column-gap: 16px
+
+	.slider-progress__counter
+		.slider-counter
+			font-family: var(--font-family-subtitle)
+			font-size: 14px
+			text-transform: uppercase
+			color: var(--color-white)
+			@include element_animation
+
+		.slider-number
+			font-family: var(--font-family-subtitle)
+			font-size: 14px
+			text-transform: uppercase
+			color: rgba(255, 255, 255, 0.32)
+			@include element_animation
+
+	.slider-progress__dots
+		display: flex
+		flex: 1
+		margin: 0px 0px 5px 0px
+
+		button.owl-dot
+			flex: 1
+			height: 1px
+			background-color: rgba(255, 255, 255, 0.32)
+			border: none
+			outline: none
+			@include element_animation
+
+			&.active
+				background-color: var(--color-orange-100)
+
+/* Slider progress styles end. */
 
 /* TITLE STYLE SETTINGS END. */
 
@@ -792,6 +852,7 @@ a
 		display: flex
 		justify-content: space-between
 		align-items: flex-end
+		column-gap: 10px
 
 		.container-menu__bottom-menu
 			display: flex
@@ -4419,6 +4480,9 @@ a
 				display: flex
 				justify-content: center
 				align-items: center
+
+				&:hover
+					background-color: var(--color-dark-03)
 
 		.container-application__body
 			position: relative
