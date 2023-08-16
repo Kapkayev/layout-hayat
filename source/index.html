@@ -130,8 +130,8 @@
 						</nav>
 					</div>
 					<div>
-						<div class="navigation-block__phone application-modal-toggle">
-							<a href="#">
+						<div class="navigation-block__phone">
+							<a href="tel: +7 705 924 97 88">
 								<span>+7 705 924 97 88</span>
 								<img src="media/icons/icon_phone.svg" class="img-svg" alt="">
 							</a>
@@ -395,7 +395,82 @@
 	</div>
 </section>
 
-<!-- 
+<section class="wrapper-full section-filters">
+	<div class="wrapper-fix wrapper-filters">
+		<div class="container-filters">
+			<form class="container-filters__form">
+				<div class="container-filters__head">
+					<button type="reset">Сбросить</button>
+					<span>Фильтры</span>
+					<div class="container-filter__close" id="close-filters">
+						<img src="media/icons/icon_close.svg" alt="Закрыть">
+					</div>
+				</div>
+				<div class="container-filters__body">
+
+					<div class="input-block buttons">
+						<p>Класс жк</p>
+						<div class="radio-group">
+							<input type="radio" id="class-00" name="class" value="0" checked>
+							<label for="class-00">Все</label>
+
+							<input type="radio" id="class-01" name="class" value="1">
+							<label for="class-01">премиум</label>
+
+							<input type="radio" id="class-02" name="class" value="2">
+							<label for="class-02">бизнес</label>
+							
+							<input type="radio" id="class-03" name="class" value="3">
+							<label for="class-03">комфорт+</label>
+						</div>
+					</div>
+
+					<div class="input-block customizations-select process-select">
+						<p>Готовность</p>
+						<select id="process-select">
+							<option value="1">Все</option>
+							<option value="2">Объект сдан</option>
+							<option value="3">Строится</option>
+						</select>	
+					</div>
+
+					<div class="input-block buttons">
+						<p>Комнатность</p>
+						<div class="radio-group">
+							<input type="radio" id="projects-panel-room-00" name="rooms" value="0">
+							<label for="projects-panel-room-00">Студия</label>
+
+							<input type="radio" id="projects-panel-room-01" name="rooms" value="1">
+							<label for="projects-panel-room-01">1к</label>
+
+							<input type="radio" id="projects-panel-room-02" name="rooms" value="2">
+							<label for="projects-panel-room-02">2к</label>
+							
+							<input type="radio" id="projects-panel-room-03" name="rooms" value="3">
+							<label for="projects-panel-room-03">3к+</label>
+						</div>
+					</div>
+
+					<div class="input-block range">
+						<p>Стоимость квартиры, млн ₸</p>
+						<div class="range-input">
+							<div class="values">
+								<span id="filters-window-lower-value"></span>
+								<span id="filters-window-upper-value"></span>
+							</div>
+							<div class="custom-range" id="filters-window-range"></div>
+						</div>
+					</div>
+
+				</div>
+				<div class="container-filters__footer">
+					<button class="button">Показать 5 проектов</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
 <section class="wrapper-full section-projects">
 	<div class="wrapper-fix wrapper-projects">
 		<div class="container-projects">
@@ -476,6 +551,16 @@
 				</div>
 			</div>
 
+			<div class="projects-panel-mobile">
+				<div class="projects-panel__button" id="open-filters">
+					<img src="media/icons/icon_filters.svg" alt="">
+					<span>Фильтры</span>
+				</div>
+				<div class="projects-panel__button" id="open-map">
+					<span>На карте</span>
+				</div>
+			</div>
+
 			<div class="projects-grid">
 
 				<div class="projects-grid__item">
@@ -495,10 +580,13 @@
 					<div class="projects-grid__item-body">
 						<div class="projects-grid__item-information">
 							<p>hayat Meliora</p>
+							<div class="projects-grid__item-price">
+								<p>от 38.9 млн ₸</p>
+							</div>
 							<div>
 								<span>Алматы, мкр. Кок-Тобе</span>
 								<span>216 квартир</span>
-								<span>от 38.9 млн ₸</span>
+								<span class="price">от 38.9 млн ₸</span>
 							</div>
 						</div>
 						<div>
@@ -545,10 +633,13 @@
 					<div class="projects-grid__item-body">
 						<div class="projects-grid__item-information">
 							<p>hayat Meliora</p>
+							<div class="projects-grid__item-price">
+								<p>от 38.9 млн ₸</p>
+							</div>
 							<div>
 								<span>Алматы, мкр. Кок-Тобе</span>
 								<span>216 квартир</span>
-								<span>от 38.9 млн ₸</span>
+								<span class="price">от 38.9 млн ₸</span>
 							</div>
 						</div>
 						<div>
@@ -598,10 +689,13 @@
 					<div class="projects-grid__item-body">
 						<div class="projects-grid__item-information">
 							<p>hayat Meliora</p>
+							<div class="projects-grid__item-price">
+								<p>от 38.9 млн ₸</p>
+							</div>
 							<div>
 								<span>Алматы, мкр. Кок-Тобе</span>
 								<span>216 квартир</span>
-								<span>от 38.9 млн ₸</span>
+								<span class="price">от 38.9 млн ₸</span>
 							</div>
 						</div>
 						<div>
@@ -648,10 +742,13 @@
 					<div class="projects-grid__item-body">
 						<div class="projects-grid__item-information">
 							<p>hayat Meliora</p>
+							<div class="projects-grid__item-price">
+								<p>от 38.9 млн ₸</p>
+							</div>
 							<div>
 								<span>Алматы, мкр. Кок-Тобе</span>
 								<span>216 квартир</span>
-								<span>от 38.9 млн ₸</span>
+								<span class="price">от 38.9 млн ₸</span>
 							</div>
 						</div>
 						<div>
@@ -701,10 +798,13 @@
 					<div class="projects-grid__item-body">
 						<div class="projects-grid__item-information">
 							<p>hayat Meliora</p>
+							<div class="projects-grid__item-price">
+								<p>от 38.9 млн ₸</p>
+							</div>
 							<div>
 								<span>Алматы, мкр. Кок-Тобе</span>
 								<span>216 квартир</span>
-								<span>от 38.9 млн ₸</span>
+								<span class="price">от 38.9 млн ₸</span>
 							</div>
 						</div>
 						<div>
@@ -754,10 +854,13 @@
 					<div class="projects-grid__item-body">
 						<div class="projects-grid__item-information">
 							<p>hayat Meliora</p>
+							<div class="projects-grid__item-price">
+								<p>от 38.9 млн ₸</p>
+							</div>
 							<div>
 								<span>Алматы, мкр. Кок-Тобе</span>
 								<span>216 квартир</span>
-								<span>от 38.9 млн ₸</span>
+								<span class="price">от 38.9 млн ₸</span>
 							</div>
 						</div>
 						<div>
@@ -885,6 +988,16 @@
 					<span class="benefits-counter"></span>
 					<span class="benefits-number"></span>
 					<div class="benefits-progress"></div>
+
+					<div class="slider-navigation benefits-navigation">
+						<span class="button button-prev owl-benefits-prev">
+							<img src="media/icons/icon_arrow-narrow-left.svg" alt="" class="img-svg">
+						</span>
+						<span class="button button-next owl-benefits-next">
+							<img src="media/icons/icon_arrow-narrow-right.svg" alt="" class="img-svg">
+						</span>
+					</div>
+
 				</div>
 			</div>
 			<div class="container-benefits__col-02">
@@ -894,11 +1007,12 @@
 				</div>
 				<div class="container-benefits__content-body">
 					<p>Во всех без исключения проектах Hayat Construction Group мы продумываем планировки вашей будущей квартиры так, чтобы это было комфортно, удобно и красиво. Также мы можем помочь вам с выбором мебели и ремонтных бригад из списка надежных подрядчиков.</p>
+
 					<div class="slider-navigation container-benefits__slider-navigation">
-						<span class="button button-prev" id="owl-benefits-prev">
+						<span class="button button-prev owl-benefits-prev">
 							<img src="media/icons/icon_arrow-narrow-left.svg" alt="" class="img-svg">
 						</span>
-						<span class="button button-next" id="owl-benefits-next">
+						<span class="button button-next owl-benefits-next">
 							<img src="media/icons/icon_arrow-narrow-right.svg" alt="" class="img-svg">
 						</span>
 					</div>
@@ -983,7 +1097,7 @@
 							</div>
 						</div>
 
-						<a href="#" class="button">Подать заявку</a>
+						<a class="button application-modal-toggle">Подать заявку</a>
 					</div>
 					<div class="background"></div>
 				</div>
@@ -1071,6 +1185,9 @@
 						Более точную информацию могут предоставить представители банка.</span>
 
 					</div>
+					<div class="container-calculator__mobile">
+						<a class="button application-modal-toggle">Подать заявку</a>
+					</div>
 				</div>
 			</div>
 
@@ -1153,6 +1270,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="container-press__row-03">
+				<div class="slider-navigation container-press__slider-navigation">
+					<span class="button button-prev owl-press-prev">
+						<img src="media/icons/icon_arrow-narrow-left.svg" alt="" class="img-svg">
+					</span>
+					<span class="button button-next owl-press-next">
+						<img src="media/icons/icon_arrow-narrow-right.svg" alt="" class="img-svg">
+					</span>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -1184,6 +1311,7 @@
 							<input type="text" name="feedback-number" placeholder="номер телефона">
 							<button>оставить заявку</button>
 						</form>
+						<a class="button application-modal-toggle">оставить заявку</a>
 					</div>
 				</div>
 				<div class="background"></div>
@@ -1203,6 +1331,7 @@
 						</div>
 					</div>
 				</a>
+				<div></div>
 			</div>
 			<div class="container-feedback-col-03">
 				<a href="#">
@@ -1340,7 +1469,7 @@
 
 		</div>
 	</div>
-</footer> -->
+</footer>
 
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

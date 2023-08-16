@@ -144,11 +144,11 @@ jQuery('.benefits-slider').owlCarousel({
 let owlBenefitsSlider = jQuery('.benefits-slider');
 owlBenefitsSlider.owlCarousel();
 
-jQuery('#owl-benefits-prev').click(function() {
+jQuery('.owl-benefits-prev').click(function() {
     owlBenefitsSlider.trigger('prev.owl.carousel');
 })
 
-jQuery('#owl-benefits-next').click(function() {
+jQuery('.owl-benefits-next').click(function() {
     owlBenefitsSlider.trigger('next.owl.carousel');
 })
 
@@ -185,7 +185,7 @@ jQuery('#desktop-menu-button').click(function(){
 
 
 /*--------------------------------------------------------------
->>> BURGER MENU CODE START:
+>>> APPLICATION MODAL CODE START:
 --------------------------------------------------------------*/
 
 jQuery('.application-modal-toggle').click(function(){
@@ -200,7 +200,31 @@ jQuery('.application-modal-toggle').click(function(){
 })
 
 /*--------------------------------------------------------------
->>> BURGER MENU CODE END.
+>>> APPLICATION MODAL CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> FILTERS MODAL CODE START:
+--------------------------------------------------------------*/
+
+jQuery('#open-filters').click(function(){
+    jQuery(".section-filters").toggleClass("active");
+    setTimeout(function(){
+        jQuery('html').toggleClass("overflow");
+    }, 300)
+})
+
+jQuery('#close-filters').click(function(){
+    jQuery(".section-filters").toggleClass("active");
+    setTimeout(function(){
+        jQuery('html').toggleClass("overflow");
+    }, 300)
+})
+
+/*--------------------------------------------------------------
+>>> FILTERS MODAL CODE END.
 --------------------------------------------------------------*/
 
 
@@ -249,6 +273,33 @@ projectsPanelRange && projectsPanelRange.noUiSlider.on('update', function (value
 });
 
 /* Range (Projects Panel) input code end. */
+
+
+/* Range (Filters Window) input code start: */
+
+const filtersWindowRange = document.getElementById('filters-window-range');
+
+filtersWindowRange && noUiSlider.create(filtersWindowRange, {
+    start: [0, 300],
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 300
+    },
+    behaviour: 'tap-drag',
+    tooltips: false,
+});
+
+const nodesFiltersWindowRange = [
+    document.getElementById('filters-window-lower-value'), // 0
+    document.getElementById('filters-window-upper-value')  // 1
+];
+
+filtersWindowRange && filtersWindowRange.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+    nodesFiltersWindowRange[handle].innerHTML = `${values[handle].slice(0, -1)}`;
+});
+
+/* Range (Filters Window) input code end. */
 
 
 /* Range (Calculator) input's code start: */
@@ -544,17 +595,30 @@ jQuery('.press-slider').owlCarousel({
     autoplay: false,
     items:3,
     smartSpeed: 1500,
-    margin: 56
+    responsive: {
+        0: {
+            items: 1,
+            margin: 0
+        },
+        721:{
+            items: 2,
+            margin: 30
+        },
+        1180: {
+            items: 3,
+            margin: 56
+        }
+    },
 })
 
 let owlPressSlider = jQuery('.press-slider');
 owlPressSlider.owlCarousel();
 
-jQuery('#owl-press-prev').click(function() {
+jQuery('.owl-press-prev').click(function() {
     owlPressSlider.trigger('prev.owl.carousel');
 })
 
-jQuery('#owl-press-next').click(function() {
+jQuery('.owl-press-next').click(function() {
     owlPressSlider.trigger('next.owl.carousel');
 })
 
@@ -766,46 +830,46 @@ ScrollTrigger.create({
 >>> CUSTOM SCROLL CODE START:
 --------------------------------------------------------------*/
 
-// let cursor = document.querySelector('.cursor');
-// let a = document.querySelectorAll('a');
-// let buttons = document.querySelectorAll('.button');
+let cursor = document.querySelector('.cursor');
+let a = document.querySelectorAll('a');
+let buttons = document.querySelectorAll('.button');
 
-// document.addEventListener('mousemove', function(e){
-//   let x = e.clientX;
-//   let y = e.clientY;
-//   cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-// });
+document.addEventListener('mousemove', function(e){
+  let x = e.clientX;
+  let y = e.clientY;
+  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+});
 
-// document.addEventListener('mousemove', function(e){
-//   let x = e.clientX;
-//   let y = e.clientY;
-// });
+document.addEventListener('mousemove', function(e){
+  let x = e.clientX;
+  let y = e.clientY;
+});
 
-// document.addEventListener('mousedown', function(){
-//   cursor.classList.add('click');
-// });
+document.addEventListener('mousedown', function(){
+  cursor.classList.add('click');
+});
 
-// document.addEventListener('mouseup', function(){
-//   cursor.classList.remove('click')
-// });
+document.addEventListener('mouseup', function(){
+  cursor.classList.remove('click')
+});
 
-// a.forEach(item => {
-//   item.addEventListener('mouseover', () => {
-//     cursor.classList.add('hover');
-//   });
-//   item.addEventListener('mouseleave', () => {
-//     cursor.classList.remove('hover');
-//   });
-// })
+a.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    cursor.classList.add('hover');
+  });
+  item.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+  });
+})
 
-// buttons.forEach(item => {
-//   item.addEventListener('mouseover', () => {
-//     cursor.classList.add('hover');
-//   });
-//   item.addEventListener('mouseleave', () => {
-//     cursor.classList.remove('hover');
-//   });
-// })
+buttons.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    cursor.classList.add('hover');
+  });
+  item.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+  });
+})
 
 /*--------------------------------------------------------------
 >>> CUSTOM SCROLL CODE END.

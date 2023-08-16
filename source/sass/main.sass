@@ -9,7 +9,7 @@
 	box-sizing: border-box
 
 html
-	// overflow-y: hidden
+	overflow-y: hidden
 
 	&.overflow
 		overflow: hidden
@@ -20,7 +20,7 @@ body
 	scroll-behavior: smooth
 	-webkit-font-smoothing: antialiased
 	background-color: var(--color-white)
-	// cursor: none
+	cursor: none
 
 	&::-webkit-scrollbar
 		width: 3px
@@ -51,7 +51,7 @@ p
 	color: var(--color-dark-100)
 
 a
-	// cursor: none
+	cursor: none
 
 @mixin element_animation
 	transition-timing-function: ease-in-out
@@ -1065,10 +1065,44 @@ a
 .projects-panel
 	display: flex
 	flex-direction: row
+	flex-wrap: wrap
+	row-gap: 24px
 	column-gap: 24px
 	align-items: center
 
 	margin: 0px 0px 56px 0px
+
+.projects-panel-mobile
+	width: 100%
+	display: flex
+	margin: 0px 0px 24px 0px
+
+	display: none
+
+	.projects-panel__button
+		width: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+		column-gap: 8px
+		border: 1px solid var(--color-dark-10)
+		padding: 12px 20px
+
+		@include element_animation
+
+		span
+			font-family: var(--font-family-subtitle)
+			font-weight: 400
+			font-size: 14px
+			line-height: 16px
+			color: var(--color-dark-100)
+			text-transform: uppercase
+
+		&:hover
+			background-color: var(--color-dark-05)
+
+		&:first-child
+			border-right: none
 
 
 /* Input elements styles start: */
@@ -1339,6 +1373,10 @@ a
 				left: 16px 
 				z-index: 2
 
+				display: flex
+				flex-wrap: wrap
+				row-gap: 6px
+
 			.projects-grid__item-image
 				width: 100%
 				height: 510px
@@ -1372,6 +1410,18 @@ a
 							&:after
 								display: none
 
+					.projects-grid__item-price
+						width: auto
+						display: none
+
+						p
+							font-family: var(--font-family-text)
+							font-weight: 400
+							font-size: 16px
+							line-height: 18px
+							color: var(--color-dark-100)
+							text-align: right
+
 		.projects-grid__item-body
 			width: 100%
 			display: flex
@@ -1388,8 +1438,21 @@ a
 					text-transform: uppercase
 					color: var(--color-dark-100)
 
+				.projects-grid__item-price
+					width: auto
+					display: none
+
+					p
+						font-family: var(--font-family-text)
+						font-weight: 400
+						font-size: 16px
+						line-height: 18px
+						color: var(--color-dark-100)
+						text-align: right
+
 				div
 					display: flex
+					flex-wrap: wrap
 					column-gap: 20px
 					margin: 8px 0px 0px 0px
 
@@ -1907,6 +1970,9 @@ a
 	.benefits-progress
 		display: none
 
+	.benefits-navigation
+		display: none
+
 .container-benefits__content-head
 	padding: 0px 0px 0px 40px
 
@@ -2162,6 +2228,30 @@ a
 				color: var(--color-dark-100)
 				text-transform: uppercase
 
+.container-calculator__mobile
+	display: none
+	margin: 24px 0px 0px 0px
+
+	.button
+		width: 100%
+		display: inline-block
+		font-family: var(--font-family-subtitle)
+		font-weight: 400
+		font-size: 14px
+		color: var(--color-white)
+		text-transform: uppercase
+		text-decoration: none
+		text-align: center
+		background-color: var(--color-orange-100)
+		padding: 20px 10px
+
+		margin: 0px 0px 40px 0px
+
+		@include element_animation
+
+		&:hover
+			background-color: var(--color-orange-150)
+
 /* CALCULATOR HOME PAGE STYLE SETTINGS END. */
 
 
@@ -2172,6 +2262,8 @@ a
 	margin: 96px auto
 
 .container-press
+	position: relative
+
 	.container-press__row-01
 		width: 100%
 		display: flex
@@ -2183,13 +2275,20 @@ a
 		width: 100%
 		margin: 40px 0px 0px 0px
 
-.container-press__row-01
+	.container-press__row-03
+		display: none
+		position: absolute
+		bottom: 25px
+		right: 0px
+		z-index: 5
+
+.container-press__row-01, .container-press__row-03
 	.container-press__slider-navigation
 		.button
 			border: 1px solid var(--color-dark-10)
 
 			&.button-prev
-				background-color: transparent
+				background-color: var(--color-white)
 
 				.img-svg path
 					stroke: var(--color-dark-100)
@@ -2346,6 +2445,32 @@ a
 		z-index: 2
 		padding: 64px 48px 40px 0px
 
+		.button
+			width: 100%
+			height: 56px
+			font-family: var(--font-family-subtitle)
+			font-weight: 400
+			font-size: 14px
+			line-height: 24px
+			color: var(--color-white)
+			text-transform: uppercase
+			text-decoration: none
+			text-align: center
+
+			background-color: rgba(255, 255, 255, 0.16)
+			padding: 16px 16px
+			border: 1px solid rgba(255, 255, 255, 0.32)
+			outline: none
+			cursor: pointer
+
+			display: none
+
+			@include element_animation
+
+			&:hover
+				background-color: var(--color-orange-100)
+				border: none
+
 		form
 			width: 100%
 			display: flex
@@ -2465,8 +2590,8 @@ a
 					color: var(--color-dark-50)
 
 				span
-					width: 64px
-					height: 64px
+					min-width: 64px
+					min-height: 64px
 					border-radius: 50%
 					background-color: var(--color-white)
 					display: flex
@@ -2481,6 +2606,19 @@ a
 .container-feedback-col-03
 	a
 		background-color: var(--color-dark-03)
+
+.container-feedback-col-02
+	& > div
+		width: 100%
+		height: 100%
+		position: absolute
+		left: -20%
+		right: auto
+		top: 0px
+		z-index: 1
+		background-color: var(--color-dark-05)
+
+		display: none
 
 .container-feedback-col-03
 	& > div
@@ -4754,3 +4892,120 @@ a
 		height: 64px
 
 /* CUSTOM CURSOR STYLE SETTINGS END. */
+
+
+
+/* MOBILE FILTERS STYLE SETTINGS START: */
+
+.section-filters
+	width: 100%
+	height: 100vh
+	background-color: var(--color-white)
+
+	position: fixed
+	top: 0px
+	right: 0px
+	z-index: 6
+
+	transition-duration: 0.4s
+	transform: translateX(100%)
+
+	display: none
+
+	&.active
+		transform: translateX(0%)
+		
+	.wrapper-filters
+		padding: 0px 0px
+
+.container-filters
+	.container-filters__form
+		.container-filters__head
+			width: 100%
+			display: flex
+			align-items: center
+			justify-content: space-between
+			border-bottom: 1px solid var(--color-dark-10)
+			padding: 20px 20px 16px 20px
+
+			button
+				border: none
+				outline: none
+				font-family: var(--font-family-subtitle)
+				font-size: 12px
+				line-height: 20px
+				color: var(--color-dark-40)
+				background-color: transparent
+				text-transform: uppercase
+
+			span
+				font-family: var(--font-family-subtitle)
+				font-size: 16px
+				line-height: 20px
+				color: var(--color-dark-100)
+				text-transform: uppercase
+
+			.container-filter__close
+				width: 20px
+
+				img
+					width: 100%
+
+		.container-filters__body
+			width: 100%
+			display: flex
+			flex-direction: column
+			row-gap: 24px
+			padding: 24px 20px 68px 20px
+
+			.input-block
+				width: 100%
+
+				&.buttons
+					.radio-group
+						label
+							flex: 1
+
+							&:last-child
+								border: 1px solid var(--color-dark-10)
+
+				&.customizations-select
+					.custom-select-container 
+						&.customSelect
+							width: 100%
+
+				&.range 
+					width: 100%
+					max-width: none
+
+					.range-input
+						.custom-range
+							width: 100%
+							max-width: calc(100% - 50px)
+
+		.container-filters__footer
+			.button
+				width: calc(100% - 40px)
+				display: inline-block
+				font-family: var(--font-family-subtitle)
+				font-weight: 400
+				font-size: 14px
+				color: var(--color-white)
+				text-transform: uppercase
+				text-decoration: none
+				text-align: center
+				background-color: var(--color-orange-100)
+				border: none
+				outline: none
+				padding: 16px 10px
+
+				position: fixed
+				bottom: 0px
+				left: 20px
+
+				@include element_animation
+
+				&:hover
+					background-color: var(--color-orange-150)
+
+/* MOBILE FILTERS STYLE SETTINGS END. */

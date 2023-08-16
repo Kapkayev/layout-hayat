@@ -1,18 +1,5 @@
 @media only screen and (max-width: 1920px)
 
-	/* BASE STYLE SETTINGS START (1440px): */
-
-	h1
-		font-size: 104px
-
-	h2
-		font-size: 96px
-		line-height: 100px
-
-	/* BASE STYLE SETTINGS END (1440px). */
-
-
-
 	/* WRAPPER STYLE SETTINGS START (1440px): */
 
 	.wrapper-fix
@@ -144,6 +131,65 @@
 						width: auto
 
 	/* BURGER MENU STYLE SETTINGS END (1360px). */
+
+
+
+	/* PROJECTS STYLE SETTINGS START (1360px): */
+
+	/* Projects grid option styles start: */
+
+	.projects-grid
+		.projects-grid__item
+			.projects-grid__item-head
+				.projects-grid__item-image
+					height: 420px
+
+			&:first-child
+				.projects-grid__item-head
+					.projects-grid__item-image
+						height: 420px
+
+	/* Projects grid option styles end. */
+
+	/* PROJECTS STYLE SETTINGS END (1360px). */
+
+
+
+	/* ADDITIONAL STYLE SETTINGS START (1360px): */
+
+	.container-additional
+		grid-template-columns: repeat(4, 1fr)
+
+		.container-additional__item 
+			.container-additional__item-head 
+				p
+					font-size: 24px
+					line-height: 30px
+
+	/* ADDITIONAL STYLE SETTINGS END (1360px). */
+
+
+
+	/* CALCULATOR HOME PAGE STYLE SETTINGS START (1360px): */
+
+	.container-calculator__row
+		&.option-01
+			.container-calculator__col-01
+				width: 42%
+
+			.container-calculator__col-02
+				width: 58%
+
+	.container-calculator__list 
+		.container-calculator__list-item
+			flex-direction: column
+			align-items: flex-start
+			row-gap: 15px
+
+			.container-calculator__list-item-table
+				width: 100%
+
+	/* CALCULATOR HOME PAGE STYLE SETTINGS END (1360px). */
 
 
 
@@ -306,6 +352,165 @@
 
 
 
+	/* PROJECTS STYLE SETTINGS START (1180px): */
+
+	/* Projects grid option styles start: */
+
+	.projects-grid
+		column-gap: 40px
+		row-gap: 40px
+
+		& > div
+			width: calc((100% - 80px) / 3)
+
+			&:nth-child(1)
+				width: 100%
+
+			&:nth-child(5)
+				width: calc((100% - 40px) / 2)
+
+			&:nth-child(6)
+				width: calc((100% - 40px) / 2)
+
+		.projects-grid__item
+			.projects-grid__item-head
+				.projects-grid__item-image
+					height: 400px
+
+			.projects-grid__item-body
+				flex-wrap: wrap
+				column-gap: 20px
+				row-gap: 10px
+
+				.projects-grid__item-information
+					p
+						font-size: 30px
+						line-height: 32px
+
+				.projects-grid__item-icons
+					column-gap: 30px
+
+					div
+						column-gap: 9px
+
+						span
+							font-size: 13px
+
+			&:first-child
+				.projects-grid__item-head
+					.projects-grid__item-image
+						height: 400px
+
+	/* Projects grid option styles end. */
+
+	/* PROJECTS STYLE SETTINGS END (1180px). */
+
+
+
+	/* ADDITIONAL STYLE SETTINGS START (1180px): */
+
+	.container-additional
+		grid-template-columns: repeat(2, 1fr)
+
+		.container-additional__item
+			height: 520px
+
+			&:nth-child(3)
+				& > div
+					border-left: none
+
+			.container-additional__item-head
+				span
+					width: 60px
+					height: 60px
+
+	/* ADDITIONAL STYLE SETTINGS END (1180px). */
+
+
+
+	/* BENEFITS STYLE SETTINGS START (1180px): */
+
+	.container-benefits
+		.container-benefits__col-01
+			width: 50%
+
+		.container-benefits__col-02
+			width: 50%
+
+	.container-benefits__content-body
+		padding: 95px 0px 0px 130px
+
+		p
+			max-width: 370px
+			line-height: 24px
+
+	/* BENEFITS STYLE SETTINGS END (1180px). */
+
+
+
+	/* FEEDBACK STYLE SETTINGS START (1180px): */
+
+	.container-feedback
+		.container-feedback-col-01
+			width: 44%
+			height: 600px
+
+		.container-feedback-col-02
+			width: 28%
+			height: 600px
+
+		.container-feedback-col-03
+			width: 28%
+			height: 600px
+
+	.container-feedback-col-01 
+		.container-feedback__block-body 
+			padding: 0px 30px 0px 0px
+
+			p br
+				display: none
+
+		.container-feedback__block-footer
+			padding: 64px 30px 40px 0px
+
+			form
+				flex-wrap: wrap
+
+				input
+					border: none
+					outline: 1px solid rgba(255, 255, 255, 0.32)
+
+				button
+					border: none
+					outline: 1px solid rgba(255, 255, 255, 0.32)
+
+	.container-feedback-col-02 a .container-feedback__block-body h5, 
+	.container-feedback-col-03 a .container-feedback__block-body h5
+		font-size: 28px
+		line-height: 35px
+
+	.container-feedback-col-02 a .container-feedback__block-body div p br, 
+	.container-feedback-col-03 a .container-feedback__block-body div p br
+		display: none
+
+	.container-feedback-col-02 a .container-feedback__block-body div span, 
+	.container-feedback-col-03 a .container-feedback__block-body div span
+		min-width: 60px
+		min-height: 60px
+
+	/* FEEDBACK STYLE SETTINGS END (1180px). */
+
+
+
+	/* FOOTER STYLE SETTINGS START (1180px): */
+
+	.container-footer
+		grid-template-columns: repeat(2, 1fr)
+
+	/* FOOTER STYLE SETTINGS END (1180px). */
+
+
+
 
 
 
@@ -453,6 +658,207 @@
 
 
 
+	/* PROJECTS STYLE SETTINGS START (920px): */
+
+	/* Projects grid option styles start: */
+
+	.projects-grid
+		column-gap: 40px
+		row-gap: 40px
+
+		& > div
+			width: calc((100% - 40px) / 2)
+
+			&:nth-child(1)
+				width: calc((100% - 40px) / 2)
+
+			&:nth-child(5)
+				width: calc((100% - 40px) / 2)
+
+			&:nth-child(6)
+				width: calc((100% - 40px) / 2)
+
+		.projects-grid__item
+			.projects-grid__item-head
+				.projects-grid__item-image
+					height: 360px
+
+			.projects-grid__item-body
+				flex-wrap: wrap
+				column-gap: 20px
+				row-gap: 10px
+
+				.projects-grid__item-information
+					p
+						font-size: 30px
+						line-height: 32px
+
+			&:first-child
+				.projects-grid__item-head
+					.projects-grid__item-image
+						height: 360px
+
+				.projects-grid__item-body
+					.projects-grid__item-information
+						div span
+							&:nth-child(2):after
+								display: none
+
+							&:last-child
+								display: none
+
+					.projects-grid__item-icons
+						display: none
+					.projects-grid__item-price
+						display: block
+
+	/* Projects grid option styles end. */
+
+	/* PROJECTS STYLE SETTINGS END (920px). */
+
+
+
+	/* ADDITIONAL STYLE SETTINGS START (920px): */
+
+	.container-additional
+		.container-additional__item
+			height: 480px
+
+			.container-additional__item-body
+				p
+					font-size: 64px
+
+	/* ADDITIONAL STYLE SETTINGS END (920px). */
+
+
+
+	/* BENEFITS STYLE SETTINGS START (920px): */
+
+	.container-benefits
+		.container-benefits__col-01
+			width: 45%
+
+		.container-benefits__col-02
+			width: 55%
+
+	.container-benefits__slider
+		.benefits-slider
+			.benefits-item
+				.benefits-item-image
+					height: 620px
+
+	.container-benefits__slider-counter
+		width: 72px
+		height: 310px
+
+		.benefits-counter
+			font-size: 54px
+			line-height: 54px
+
+	.container-benefits__content-head
+		padding: 0px 0px 0px 40px
+
+		h2	
+			font-size: 60px
+			line-height: 68px
+
+	.container-benefits__content-body
+		padding: 95px 0px 0px 130px
+
+		p
+			max-width: 370px
+			line-height: 24px
+
+		.container-benefits__slider-navigation
+			margin: 60px 0px 0px 0px
+
+	/* BENEFITS STYLE SETTINGS END (920px). */
+
+
+
+	/* CALCULATOR HOME PAGE STYLE SETTINGS START (920px): */
+
+	.container-calculator__list 
+		.container-calculator__list-item 
+			.container-calculator__list-item-table 
+				p
+					font-size: 16px
+
+	/* CALCULATOR HOME PAGE STYLE SETTINGS END (920px). */
+
+
+
+	/* FEEDBACK STYLE SETTINGS START (920px): */
+
+	.container-feedback
+		flex-wrap: wrap
+
+		.container-feedback-col-01
+			width: 100%
+			height: 500px
+
+			.container-feedback__block-head
+				padding: 64px 0px 0px 0px
+
+			.container-feedback__block-body
+				padding: 0px 0px
+
+			.container-feedback__block-footer
+				padding: 32px 0px 30px 0px
+
+			.background
+				width: calc(100% + 88px)
+				left: -44px
+
+		.container-feedback-col-02
+			width: 50%
+			height: 500px
+
+			& > div
+				display: block
+
+		.container-feedback-col-03
+			width: 50%
+			height: 500px
+
+	.container-feedback-col-01 
+		.container-feedback__block-body 
+			padding: 0px 30px 0px 0px
+
+			p br
+				display: block
+
+		.container-feedback__block-footer
+			padding: 64px 30px 40px 0px
+
+			form
+				flex-wrap: wrap
+
+				input
+					border: none
+					outline: 1px solid rgba(255, 255, 255, 0.32)
+
+				button
+					border: none
+					outline: 1px solid rgba(255, 255, 255, 0.32)
+
+	.container-feedback-col-02,
+	.container-feedback-col-03
+		a
+			.container-feedback__block-head
+				height: 250px
+
+			.container-feedback__block-body 
+				height: 250px
+
+	.container-feedback-col-02 a .container-feedback__block-body div p br, 
+	.container-feedback-col-03 a .container-feedback__block-body div p br
+		display: initial
+
+	/* FEEDBACK STYLE SETTINGS END (920px). */
+
+
+
 
 
 
@@ -471,6 +877,9 @@
 		font-size: 62px
 		line-height: 68px
 
+	a
+		cursor: pointer
+
 	/* BASE STYLE SETTINGS END (720px). */
 
 
@@ -481,6 +890,15 @@
 		padding: 0px 20px
 
 	/* WRAPPER STYLE SETTINGS END (720px). */
+
+
+
+	/* CUSTOM CURSOR STYLE SETTINGS START (720px): */
+
+	.cursor
+		display: none
+
+	/* CUSTOM CURSOR STYLE SETTINGS END (720px). */
 
 
 
@@ -645,6 +1063,386 @@
 					line-height: 20px
 
 	/* PRELOADER STYLE SETTINGS END (720px). */
+
+
+	/* TITLE STYLE SETTINGS START (720px): */
+
+	.container-headers
+		&.margin-large
+			margin: 80px 0px 46px 0px
+
+	/* TITLE STYLE SETTINGS END (720px). */
+
+
+
+	/* PROJECTS STYLE SETTINGS START (720px): */
+
+	.projects-panel
+		row-gap: 20px
+		column-gap: 20px
+		margin: 0px 0px 46px 0px
+
+	/* Input elements styles start: */
+
+	.input-block
+		& > p
+			font-size: 12px
+			line-height: 20px
+
+		&.buttons
+			.radio-group
+				label
+					padding: 9px 20px
+
+		&.customizations-select
+			.custom-select-container 
+				&.customSelect
+					height: 44px
+
+					.custom-select-opener
+						padding: 9px 17px
+
+		&.range 
+			.range-input
+				height: 44px
+				padding: 9px 17px
+
+
+	/* Input elements styles end. */
+
+
+	/* Projects grid option styles start: */
+
+	.projects-grid
+		column-gap: 30px
+		row-gap: 30px
+
+		& > div
+			width: calc((100% - 30px) / 2)
+
+			&:nth-child(1)
+				width: calc((100% - 30px) / 2)
+
+			&:nth-child(5)
+				width: calc((100% - 30px) / 2)
+
+			&:nth-child(6)
+				width: calc((100% - 30px) / 2)
+
+		.projects-grid__item
+			.projects-grid__item-head
+				.projects-grid__item-badges
+					left: 12px
+					top: 20px
+
+				.projects-grid__item-image
+					height: 320px
+
+			.projects-grid__item-body
+				flex-direction: column
+				column-gap: 0px
+				row-gap: 0px
+				margin: 20px 0px 0px 0px
+
+				.projects-grid__item-information
+					p
+						font-size: 26px
+						line-height: 32px
+
+				.projects-grid__item-price
+					p
+						font-size: 16px
+
+			&:first-child
+				.projects-grid__item-head
+					.projects-grid__item-image
+						height: 320px
+
+				.projects-grid__item-body
+					.projects-grid__item-icons
+						display: none
+					.projects-grid__item-price
+						display: block
+
+	/* Projects grid option styles end. */
+
+	/* PROJECTS STYLE SETTINGS END (720px). */
+
+
+
+	/* ADDITIONAL STYLE SETTINGS START (720px): */
+
+	.section-additional
+		margin: 80px auto
+
+	.container-additional
+		.container-additional__item
+			height: 380px
+			padding: 40px 0px
+
+			.container-additional__item-body
+				p
+					font-size: 60px
+
+	/* ADDITIONAL STYLE SETTINGS END (720px). */
+
+
+
+	/* BENEFITS STYLE SETTINGS START (720px): */
+
+	.section-benefits
+		margin: 80px auto
+
+	.container-benefits
+		flex-direction: column
+		row-gap: 32px
+
+		.container-benefits__col-01
+			width: 100%
+
+		.container-benefits__col-02
+			width: 100%
+
+	.container-benefits__slider
+		width: calc(100% + 40px)
+		right: 0%
+		left: -20px
+
+		.benefits-slider
+			.benefits-item
+				.benefits-item-image
+					height: 500px
+
+	.container-benefits__slider-counter
+		width: auto
+		height: auto
+		right: -20px
+
+		display: flex
+		flex-direction: row
+		padding: 16px 20px 16px 32px
+
+		.benefits-counter
+			font-size: 14px
+			line-height: 14px
+
+		.benefits-navigation
+			display: flex
+			margin: 0px 0px 0px 24px
+
+			.button
+				&.button-next
+					background-color: var(--color-white)
+
+					.img-svg path
+						stroke: var(--color-orange-150)
+
+					&:hover
+						background-color: var(--color-dark-10)
+
+	.container-benefits__content-head
+		padding: 0px 0px 0px 0px
+
+		p
+			padding: 0px 0px 12px 0px
+			margin: 0px 0px 12px 0px
+
+		h2	
+			font-size: 54px
+			line-height: 62px
+
+	.container-benefits__content-body
+		padding: 24px 0px 48px 0px
+		border-bottom: 1px solid var(--color-dark-10)
+
+		p
+			max-width: none
+
+		.container-benefits__slider-navigation
+			display: none
+
+	/* BENEFITS STYLE SETTINGS END (720px). */
+
+
+
+	/* CALCULATOR HOME PAGE STYLE SETTINGS START (720px): */
+
+	.container-calculator 
+		.container-headers
+			margin: 0px 0px 56px 0px
+
+	.container-calculator__row
+		flex-direction: column
+		row-gap: 24px
+
+		&.option-01
+			.container-calculator__col-01
+				width: 100%
+
+				.container-calculator__block
+					padding: 0px 0px
+
+				.background
+					height: calc(100% + 24px)
+					right: -20px
+
+			.container-calculator__col-02
+				width: 100%
+
+				.container-calculator__list
+					padding: 0px 0px
+
+	.container-calculator__list 
+		.container-calculator__list-item
+			padding: 32px 0px
+
+	/* CALCULATOR HOME PAGE STYLE SETTINGS END (720px). */
+
+
+
+	/* PRESS HOME PAGE STYLE SETTINGS START (720px): */
+
+	.section-press
+		margin: 80px auto
+
+	.container-press
+		.container-press__row-01
+			.container-press__slider-navigation
+				display: none
+
+		.container-press__row-02 
+			margin: 20px 0px 0px 0px
+
+			.container-press__slider 
+				.press-slider 
+					.press-item
+						height: auto
+						padding: 32px 0px
+						border: none
+
+						&:hover
+							background-color: transparent
+
+							.press-item-body
+								h4
+									color: var(--color-dark-100)
+
+								p
+									color: var(--color-dark-40)
+
+							.press-item-footer
+								p
+									color: var(--color-dark-100)
+
+								span
+									color: var(--color-dark-40)
+
+						.press-item-body
+							p
+								height: 78px
+								display: -webkit-box
+								-webkit-line-clamp: 3
+								-webkit-box-orient: vertical
+								overflow: hidden
+
+						.press-item-footer
+							justify-content: flex-start
+							margin: 30px 0px 0px 0px
+
+							p
+								font-size: 36px
+								line-height: 40px
+
+							span
+								padding: 0px 0px 0px 8px
+
+		.container-press__row-03
+			display: block
+
+	/* PRESS HOME PAGE STYLE SETTINGS END (720px). */
+
+
+
+	/* FEEDBACK STYLE SETTINGS START (720px): */
+
+	.section-feedback
+		margin: 80px auto
+
+	.container-feedback
+		flex-wrap: wrap
+
+		.container-feedback-col-01
+			width: 100%
+			height: 480px
+
+			.container-feedback__block-head
+				padding: 64px 0px 0px 0px
+
+			.container-feedback__block-body
+				padding: 0px 0px
+
+				p
+					font-size: 14px
+
+					br
+						display: none
+
+			.container-feedback__block-footer
+				padding: 32px 0px 30px 0px
+
+		.container-feedback-col-02
+			height: 470px
+
+		.container-feedback-col-03
+			height: 470px
+
+	.container-feedback-col-02
+		a
+			.container-feedback__block-head
+				height: 250px
+				padding: 48px 20px 0px 0px
+
+			.container-feedback__block-body 
+				height: 220px
+				padding: 0px 20px 40px 0px
+
+	.container-feedback-col-03
+		a
+			.container-feedback__block-head
+				height: 250px
+				padding: 48px 0px 0px 20px
+
+			.container-feedback__block-body 
+				height: 220px
+				padding: 0px 0px 40px 20px
+
+	.container-feedback-col-02 a .container-feedback__block-body h5, 
+	.container-feedback-col-03 a .container-feedback__block-body h5
+		font-size: 26px
+		line-height: 34px
+
+	.container-feedback-col-02 a .container-feedback__block-body div p, 
+	.container-feedback-col-03 a .container-feedback__block-body div p
+		font-size: 14px
+
+	.container-feedback-col-02 a .container-feedback__block-body div p br, 
+	.container-feedback-col-03 a .container-feedback__block-body div p br
+		display: none
+
+	/* FEEDBACK STYLE SETTINGS END (720px). */
+
+
+
+	/* FOOTER STYLE SETTINGS START (720px): */
+
+	.section-footer
+		margin: 80px auto 40px auto
+
+	.container-footer
+		grid-template-columns: 1fr
+		grid-gap: 24px
+
+	/* FOOTER STYLE SETTINGS END (720px). */
 
 
 
@@ -919,4 +1717,373 @@
 
 	/* PRELOADER STYLE SETTINGS END (500px). */
 
+
+
+	/* TITLE STYLE SETTINGS START (500px): */
+
+	.container-headers
+		&.margin-large
+			margin: 48px 0px 24px 0px
+
+		&.margin-middle
+			margin: 48px 0px
+
+		&.margin-small
+			margin: 0px 0px 24px 0px
+
+	/* TITLE STYLE SETTINGS END (500px). */
+
+
+
+	/* PROJECTS STYLE SETTINGS START (500px): */
+
+	.projects-panel
+		display: none
+
+	.projects-panel-mobile
+		display: flex
+
+
+	/* Projects grid option styles start: */
+
+	.projects-grid
+		column-gap: 20px
+		row-gap: 20px
+
+		& > div
+			width: 100%
+
+			&:nth-child(1)
+				width: 100%
+
+			&:nth-child(5)
+				width: 100%
+
+			&:nth-child(6)
+				width: 100%
+
+		.projects-grid__item
+			.projects-grid__item-head
+				.projects-grid__item-badges
+					left: 10px
+					top: 14px
+
+			.projects-grid__item-body
+				flex-direction: column
+				column-gap: 0px
+				row-gap: 0px
+				margin: 20px 0px 0px 0px
+
+				.projects-grid__item-information
+					display: flex
+					justify-content: space-between
+					align-items: center
+					flex-wrap: wrap
+
+					.projects-grid__item-price
+						display: block
+
+					div
+						width: 100%
+						margin: 0px 0px 0px 0px
+
+				.projects-grid__item-price
+					display: none
+
+			&:first-child
+				.projects-grid__item-body
+					.projects-grid__item-information
+						.projects-grid__item-price
+							display: block
+
+					.projects-grid__item-icons
+						display: none
+					.projects-grid__item-price
+						display: none
+
+	/* Projects grid option styles end. */
+
+	/* PROJECTS STYLE SETTINGS END (500px). */
+
+
+
+	/* MOBILE FILTERS STYLE SETTINGS START (500px): */
+
+	.section-filters
+		display: block
+
+	/* MOBILE FILTERS STYLE SETTINGS END (500px). */
+
+
+
+	/* ADDITIONAL STYLE SETTINGS START (500px): */
+
+	.section-additional
+		margin: 48px auto
+		border: none
+
+	.container-additional
+		grid-template-columns: 1fr
+		border-top: 1px solid var(--color-dark-10)
+
+		.container-headers
+			align-items: flex-start
+			justify-content: flex-start
+			padding: 48px 0px 20px 0px
+
+			h2 br
+				display: none
+
+		.container-additional__item
+			width: calc(100% + 40px)
+			height: auto
+			position: relative
+			left: -20px
+			padding: 0px 20px
+
+			& > div
+				row-gap: 24px
+				padding: 32px 0px
+				border-left: none
+				border-right: none
+				border-bottom: 1px solid var(--color-dark-10)
+
+			&:nth-child(4)
+				& > div
+					border-bottom: none
+
+			.container-additional__item-head
+				p
+					font-size: 26px
+					line-height: 34px
+
+				span
+					width: 44px
+					height: 44px
+
+			.container-additional__item-body
+				align-items: flex-start
+
+				p
+					font-size: 56px
+
+	/* ADDITIONAL STYLE SETTINGS END (500px). */
+
+
+
+	/* BENEFITS STYLE SETTINGS START (500px): */
+
+	.section-benefits
+		margin: 48px auto
+
+	.container-benefits__slider
+		.benefits-slider
+			.benefits-item
+				.benefits-item-image
+					height: 360px
+
+	.container-benefits__slider-counter
+		.benefits-navigation
+			.button
+				width: 44px
+				height: 44px
+
+				svg
+					max-width: 20px
+
+	.container-benefits__content-head
+		h2	
+			font-size: 26px
+			line-height: 34px
+
+			br
+				display: none
+
+	.container-benefits__content-body
+		padding: 24px 0px 40px 0px
+
+	/* BENEFITS STYLE SETTINGS END (500px). */
+
+
+
+	/* CALCULATOR HOME PAGE STYLE SETTINGS START (500px): */
+
+	.container-calculator 
+		.container-headers
+			margin: 0px 0px 48px 0px
+
+	.container-calculator__block
+		.button
+			display: none
+
+	.container-calculator__row
+		row-gap: 48px
+
+		&.option-01
+			.container-calculator__col-01
+				.background
+					height: calc(100% + 48px)
+					bottom: -24px
+
+	.container-calculator__list 
+		& > span
+			margin: 24px 0px 0px 0px
+			text-align: center
+
+		.container-calculator__list-item 
+			row-gap: 20px
+
+			.container-calculator__list-item-table
+				display: grid
+				grid-template-columns: repeat(2, 1fr)
+				gap: 12px
+
+	.container-calculator__mobile
+		display: block
+
+	/* CALCULATOR HOME PAGE STYLE SETTINGS END (500px). */
+
+
+
+	/* PRESS HOME PAGE STYLE SETTINGS START (500px). */
+
+	.section-press
+		margin: 12px auto 48px auto
+
+	.container-press
+		border-top: 1px solid var(--color-dark-10)
+		padding: 48px 0px 0px 0px
+
+	.container-press__row-03
+		.container-press__slider-navigation
+			.button
+				width: 44px
+				height: 44px
+
+				svg
+					max-width: 20px
+
+	/* PRESS HOME PAGE STYLE SETTINGS END (500px). */
+
+
+
+	/* FEEDBACK STYLE SETTINGS START (500px): */
+
+	.section-feedback
+		margin: 48px auto
+
+	.container-feedback
+		flex-wrap: wrap
+
+		.container-feedback-col-01
+			width: 100%
+			height: auto
+			padding: 48px 0px
+
+			.container-feedback__block-head
+				height: auto
+				padding: 0px 0px 0px 0px
+
+			.container-feedback__block-body
+				height: auto
+				padding: 0px 0px
+				margin: 32px 0px
+
+			.container-feedback__block-footer
+				height: auto
+				padding: 0px 0px 0px 0px
+
+				.button
+					display: inline-block
+
+				form
+					display: none
+
+		.container-feedback-col-02
+			width: 100%
+			height: auto
+			padding: 45px 0px
+			background-color: var(--color-dark-05)
+
+			& > div
+				width: calc(100% + 40px)
+				left: -20px
+				
+
+		.container-feedback-col-03
+			width: 100%
+			height: auto
+			padding: 45px 0px
+			background-color: var(--color-dark-03)
+
+			& > div
+				width: calc(100% + 40px)
+				left: -20px
+
+
+	.container-feedback-col-02
+		a
+			.container-feedback__block-head
+				height: 180px
+				padding: 0px 0px 0px 0px
+				margin: 0px 0px 20px 0px
+
+				img
+					width: auto
+					max-width: none
+					height: 100%
+
+			.container-feedback__block-body 
+				height: auto
+				padding: 0px 0px 0px 0px
+
+				div
+					margin: 30px 0px 0px 0px
+
+					p 
+						br
+							display: initial
+
+	.container-feedback-col-03
+		a
+			.container-feedback__block-head
+				display: none
+
+				img
+					width: auto
+					max-width: none
+					height: 100%
+
+			.container-feedback__block-body 
+				height: auto
+				padding: 0px 0px 0px 0px
+
+				div
+					margin: 30px 0px 0px 0px
+
+					p 
+						br
+							display: initial
+
+	/* FEEDBACK STYLE SETTINGS END (500px). */
+
+
+
+	/* FOOTER STYLE SETTINGS START (500px): */
+
+	.section-footer
+		margin: 48px auto 32px auto
+
+	.container-footer 
+		.container-footer__item 
+			.container-footer__item-head
+				padding: 12px 0px
+				margin: 0px 0px 24px 0px
+
+			.container-footer__item-body 
+				& > p
+					font-size: 10px
+					line-height: 16px
+
+	/* FOOTER STYLE SETTINGS END (500px). */
 
