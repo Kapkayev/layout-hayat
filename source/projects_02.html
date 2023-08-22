@@ -103,7 +103,11 @@
 						</div>
 						<div class="navigation-block__burger-menu" id="desktop-menu-button">
 							<span>Меню</span>
-							<img src="media/icons/icon_burger.svg" class="img-svg" id="desktop-menu-icon" alt="">
+							<!-- <img src="media/icons/icon_burger.svg" class="img-svg" id="desktop-menu-icon" alt=""> -->
+							<div class="burger-menu__icon">
+								<span></span>
+								<span></span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -179,6 +183,331 @@
 					</div>
 				</div>
 
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- APPLICATION MODAL -->
+<section class="wrapper-full section-application">
+	<div class="wrapper-fix wrapper-application">
+		<div class="container-application">
+			<div class="container-application__col-01">
+				<div class="container-application__background-01"></div>
+			</div>
+			<div class="container-application__col-02">
+				<div class="container-application__background-02"></div>
+				<div class="container-application__content">
+
+					<div>
+						<div class="container-application__head">
+							<div class="container-headers">
+								<h2>оставить <span>заявку</span></h2>
+							</div>
+							<div class="container-application__close application-modal-toggle">
+								<img src="media/icons/icon_close.svg" alt="Закрыть" class="img-svg">
+							</div>
+						</div>
+
+						<div class="container-application__body">
+							
+							<p>Получите оперативную и подробную консультацию <br> от нашего специалиста</p>
+
+							<form class="container-application__body-form">
+								<input type="text" name="name" placeholder="Ваше имя">
+								<input type="number" name="number" placeholder="номер телефона">
+								<button class="button">оставить заявку</button>
+							</form>
+
+						</div>
+					</div>
+
+					<div class="container-application__footer">
+						<p>
+							НАЖИМАЯ НА КНОПКУ «ОТПРАВИТЬ ЗАЯВКУ», ВЫ ПРИНИМАЕТЕ <a href="#">УСЛОВИЯ</a> ОБРАБОТКИ ДАННЫХ
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- FILTERS FOR PROJECTS IN MOBILE VIEW -->
+<section class="wrapper-full section-filters">
+	<div class="wrapper-fix wrapper-filters">
+		<div class="container-filters">
+			<form class="container-filters__form">
+				<div class="container-filters__head">
+					<button type="reset">Сбросить</button>
+					<span>Фильтры</span>
+					<div class="container-filter__close" id="close-filters">
+						<img src="media/icons/icon_close.svg" alt="Закрыть">
+					</div>
+				</div>
+				<div class="container-filters__body">
+
+					<div class="input-block buttons">
+						<p>Класс жк</p>
+						<div class="radio-group">
+							<input type="radio" id="class-00" name="class" value="0" checked>
+							<label for="class-00">Все</label>
+
+							<input type="radio" id="class-01" name="class" value="1">
+							<label for="class-01">премиум</label>
+
+							<input type="radio" id="class-02" name="class" value="2">
+							<label for="class-02">бизнес</label>
+							
+							<input type="radio" id="class-03" name="class" value="3">
+							<label for="class-03">комфорт+</label>
+						</div>
+					</div>
+
+					<div class="input-block customizations-select process-select">
+						<p>Готовность</p>
+						<select id="process-select">
+							<option value="1">Все</option>
+							<option value="2">Объект сдан</option>
+							<option value="3">Строится</option>
+						</select>	
+					</div>
+
+					<div class="input-block buttons">
+						<p>Комнатность</p>
+						<div class="radio-group">
+							<input type="radio" id="projects-panel-room-00" name="rooms" value="0">
+							<label for="projects-panel-room-00">Студия</label>
+
+							<input type="radio" id="projects-panel-room-01" name="rooms" value="1">
+							<label for="projects-panel-room-01">1к</label>
+
+							<input type="radio" id="projects-panel-room-02" name="rooms" value="2">
+							<label for="projects-panel-room-02">2к</label>
+							
+							<input type="radio" id="projects-panel-room-03" name="rooms" value="3">
+							<label for="projects-panel-room-03">3к+</label>
+						</div>
+					</div>
+
+					<div class="input-block range">
+						<p>Стоимость квартиры, млн ₸</p>
+						<div class="range-input">
+							<div class="values">
+								<span id="filters-window-lower-value"></span>
+								<span id="filters-window-upper-value"></span>
+							</div>
+							<div class="custom-range" id="filters-window-range"></div>
+						</div>
+					</div>
+
+				</div>
+				<div class="container-filters__footer">
+					<button class="button">Показать 5 проектов</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<!-- CONTROL BUTTONS FOR MAP IN MOBILE VIEW -->
+<section class="wrapper-full section-projects-controls">
+	<div class="wrapper-fix wrapper-projects-controls">
+		<div class="container-projects-controls">
+
+			<a href="#" class="projects-controls__close">
+				<img src="media/icons/icon_close.svg" alt="">
+			</a>
+
+			<div class="projects-controls__buttons">
+				<div class="projects-controls__button" id="open-filters">
+					<img src="media/icons/icon_filters.svg" alt="">
+					<span>Фильтры</span>
+				</div>
+				<div class="projects-controls__button" id="open-cities">
+					<span>Город</span>
+					<img src="media/icons/icon_black_chevron-bottom.svg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- PROJECTS ITEM'S IN MOBILE VIEW -->
+<section class="wrapper-full section-projects-mobile">
+	<div class="wrapper-projects-mobile">
+		<div class="container-projects-mobile">
+			<div class="projects-mobile__row-01">
+				<div class="background"></div>
+			</div>
+			<div class="projects-mobile__row-02">
+				<div class="projects-mobile__list">
+
+					<div class="projects-mobile__item">
+						<div class="projects-mobile__item-head">
+							<div>
+								<p>hayat Meliora</p>
+								<div>
+									<span>Алматы, мкр. Кок-Тобе</span>
+									<span>216 квартир</span>
+									<span>от 38.9 млн ₸</span>
+								</div>
+							</div>
+							<img src="media/icons/icon_close.svg" alt="">
+						</div>
+						<div class="projects-mobile__item-body">
+							<div class="projects-mobile__item-slider">
+								
+								<div class="projects-mobile-slider owl-carousel owl-theme">
+									<div class="projects-mobile-slider-item item">
+										<img src="media/projects/project_03.png" alt="">
+									</div>
+
+									<div class="projects-mobile-slider-item item">
+										<img src="media/projects/project_03.png" alt="">
+									</div>
+
+									<div class="projects-mobile-slider-item item">
+										<img src="media/projects/project_03.png" alt="">
+									</div>
+
+									<div class="projects-mobile-slider-item item">
+										<img src="media/projects/project_03.png" alt="">
+									</div>
+								</div>
+
+								<div class="projects-mobile-slider__progress"></div>
+
+							</div>
+							<div class="projects-mobile__item-table">
+								<div class="projects-mobile__item-table-item">
+									<span>квартир в наличии</span>
+									<span>156 квартир</span>
+								</div>
+								<div class="projects-mobile__item-table-item">
+									<span>стоимость</span>
+									<span>от 38.9 млн ₸</span>
+								</div>
+								<div class="projects-mobile__item-table-item">
+									<span>класс ЖК</span>
+									<span>Премиум-класс</span>
+								</div>
+								<div class="projects-mobile__item-table-item">
+									<span>сдача</span>
+									<span>сдача II кв. 2023</span>
+								</div>
+							</div>
+							<div class="projects-mobile__item-button">
+								<a href="#" class="button">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="projects-mobile__item">
+						<div class="projects-mobile__item-head">
+							<div>
+								<p>hayat Meliora</p>
+								<div>
+									<span>Алматы, мкр. Кок-Тобе</span>
+									<span>216 квартир</span>
+									<span>от 38.9 млн ₸</span>
+								</div>
+							</div>
+							<img src="media/icons/icon_close.svg" alt="">
+						</div>
+						<div class="projects-mobile__item-body">
+							<div class="projects-mobile__item-slider">
+								
+								<div class="projects-mobile-slider owl-carousel owl-theme">
+									<div class="projects-mobile-slider-item item">
+										<img src="media/projects/project_03.png" alt="">
+									</div>
+
+									<div class="projects-mobile-slider-item item">
+										<img src="media/projects/project_03.png" alt="">
+									</div>
+
+									<div class="projects-mobile-slider-item item">
+										<img src="media/projects/project_03.png" alt="">
+									</div>
+
+									<div class="projects-mobile-slider-item item">
+										<img src="media/projects/project_03.png" alt="">
+									</div>
+								</div>
+
+								<div class="projects-mobile-slider__progress"></div>
+
+							</div>
+							<div class="projects-mobile__item-table">
+								<div class="projects-mobile__item-table-item">
+									<span>квартир в наличии</span>
+									<span>156 квартир</span>
+								</div>
+								<div class="projects-mobile__item-table-item">
+									<span>стоимость</span>
+									<span>от 38.9 млн ₸</span>
+								</div>
+								<div class="projects-mobile__item-table-item">
+									<span>класс ЖК</span>
+									<span>Премиум-класс</span>
+								</div>
+								<div class="projects-mobile__item-table-item">
+									<span>сдача</span>
+									<span>сдача II кв. 2023</span>
+								</div>
+							</div>
+							<div class="projects-mobile__item-button">
+								<a href="#" class="button">Подробнее</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- CITIES SELECTOR FORM IN MOBILE VIEW -->
+<section class="wrapper-full section-cities">
+	<div class="wrapper-cities">
+		<div class="container-cities">
+			<div class="container-cities__row-01">
+				<div class="background"></div>
+			</div>
+			<div class="container-cities__row-02">
+				<div class="cities-block">
+					<div class="cities-block__head">
+						<p>Выберите город</p>
+						<img src="media/icons/icon_close.svg" alt="" id="close-cities">
+					</div>
+					<div class="cities-block__body">
+						<div class="cities-form">
+							<form>
+								<div class="input-block buttons">
+									<div class="radio-group">
+										<input type="radio" id="default-city" name="city" value="0" checked>
+										<label for="default-city">Все города</label>
+
+										<input type="radio" id="city-01" name="city" value="1">
+										<label for="city-01">Алматы</label>
+
+										<input type="radio" id="city-02" name="city" value="2">
+										<label for="city-02">Астана</label>
+										
+										<input type="radio" id="city-03" name="city" value="3">
+										<label for="city-03">Дубаи, ОАЭ+</label>
+
+										<input type="radio" id="city-04" name="city" value="3">
+										<label for="city-04">Стамбул, турция</label>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -500,6 +829,7 @@
 							<input type="text" name="feedback-number" placeholder="номер телефона">
 							<button>оставить заявку</button>
 						</form>
+						<a class="button application-modal-toggle">оставить заявку</a>
 					</div>
 				</div>
 				<div class="background"></div>
@@ -519,6 +849,7 @@
 						</div>
 					</div>
 				</a>
+				<div></div>
 			</div>
 			<div class="container-feedback-col-03">
 				<a href="#">

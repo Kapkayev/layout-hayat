@@ -25,7 +25,7 @@
 
 <div class="cursor"></div>
 
-<section class="wrapper-full section-preloader">
+<!-- <section class="wrapper-full section-preloader">
 	<div class="wrapper-fix wrapper-preloader">
 		<div class="container-preloader">
 			<div class="container-preloader__animation">
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <header class="wrapper-full section-header dark-theme absolute">
 	<div class="wrapper-fix wrapper-header">
@@ -145,7 +145,11 @@
 						</div>
 						<div class="navigation-block__burger-menu" id="desktop-menu-button">
 							<span>Меню</span>
-							<img src="media/icons/icon_burger.svg" class="img-svg" id="desktop-menu-icon" alt="">
+							<!-- <img src="media/icons/icon_burger.svg" class="img-svg" id="desktop-menu-icon" alt=""> -->
+							<div class="burger-menu__icon">
+								<span></span>
+								<span></span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -154,6 +158,52 @@
 		</div>
 	</div>
 </header>
+
+<section class="wrapper-full section-application">
+	<div class="wrapper-fix wrapper-application">
+		<div class="container-application">
+			<div class="container-application__col-01">
+				<div class="container-application__background-01"></div>
+			</div>
+			<div class="container-application__col-02">
+				<div class="container-application__background-02"></div>
+				<div class="container-application__content">
+
+					<div>
+						<div class="container-application__head">
+							<div class="container-headers">
+								<h2>оставить <span>заявку</span></h2>
+							</div>
+							<div class="container-application__close application-modal-toggle">
+								<img src="media/icons/icon_close.svg" alt="Закрыть" class="img-svg">
+							</div>
+						</div>
+
+						<div class="container-application__body">
+							
+							<p>Получите оперативную и подробную консультацию <br> от нашего специалиста</p>
+
+							<form class="container-application__body-form">
+								<input type="text" name="name" placeholder="Ваше имя">
+								<input type="number" name="number" placeholder="номер телефона">
+								<button class="button">оставить заявку</button>
+							</form>
+
+						</div>
+					</div>
+
+					<div class="container-application__footer">
+						<p>
+							НАЖИМАЯ НА КНОПКУ «ОТПРАВИТЬ ЗАЯВКУ», ВЫ ПРИНИМАЕТЕ <a href="#">УСЛОВИЯ</a> ОБРАБОТКИ ДАННЫХ
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 
 <section class="wrapper-full section-gallery">
 	<div class="wrapper-fix wrapper-gallery">
@@ -242,51 +292,6 @@
 	</div>
 </section>
 
-<section class="wrapper-full section-application">
-	<div class="wrapper-fix wrapper-application">
-		<div class="container-application">
-			<div class="container-application__col-01">
-				<div class="container-application__background-01"></div>
-			</div>
-			<div class="container-application__col-02">
-				<div class="container-application__background-02"></div>
-				<div class="container-application__content">
-
-					<div>
-						<div class="container-application__head">
-							<div class="container-headers">
-								<h2>оставить <span>заявку</span></h2>
-							</div>
-							<div class="container-application__close application-modal-toggle">
-								<img src="media/icons/icon_close.svg" alt="Закрыть" class="img-svg">
-							</div>
-						</div>
-
-						<div class="container-application__body">
-							
-							<p>Получите оперативную и подробную консультацию <br> от нашего специалиста</p>
-
-							<form class="container-application__body-form">
-								<input type="text" name="name" placeholder="Ваше имя">
-								<input type="number" name="number" placeholder="номер телефона">
-								<button class="button">оставить заявку</button>
-							</form>
-
-						</div>
-					</div>
-
-					<div class="container-application__footer">
-						<p>
-							НАЖИМАЯ НА КНОПКУ «ОТПРАВИТЬ ЗАЯВКУ», ВЫ ПРИНИМАЕТЕ <a href="#">УСЛОВИЯ</a> ОБРАБОТКИ ДАННЫХ
-						</p>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
 <section class="wrapper-full section-menu dark-theme">
 	<div class="wrapper-fix wrapper-menu">
 		<div class="container-menu">
@@ -353,6 +358,51 @@
 					</div>
 				</div>
 
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="wrapper-full section-application">
+	<div class="wrapper-fix wrapper-application">
+		<div class="container-application">
+			<div class="container-application__col-01">
+				<div class="container-application__background-01"></div>
+			</div>
+			<div class="container-application__col-02">
+				<div class="container-application__background-02"></div>
+				<div class="container-application__content">
+
+					<div>
+						<div class="container-application__head">
+							<div class="container-headers">
+								<h2>оставить <span>заявку</span></h2>
+							</div>
+							<div class="container-application__close application-modal-toggle">
+								<img src="media/icons/icon_close.svg" alt="Закрыть" class="img-svg">
+							</div>
+						</div>
+
+						<div class="container-application__body">
+							
+							<p>Получите оперативную и подробную консультацию <br> от нашего специалиста</p>
+
+							<form class="container-application__body-form">
+								<input type="text" name="name" placeholder="Ваше имя">
+								<input type="number" name="number" placeholder="номер телефона">
+								<button class="button">оставить заявку</button>
+							</form>
+
+						</div>
+					</div>
+
+					<div class="container-application__footer">
+						<p>
+							НАЖИМАЯ НА КНОПКУ «ОТПРАВИТЬ ЗАЯВКУ», ВЫ ПРИНИМАЕТЕ <a href="#">УСЛОВИЯ</a> ОБРАБОТКИ ДАННЫХ
+						</p>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</div>
@@ -452,6 +502,12 @@
 	<div class="wrapper-fix wrapper-values">
 		<div class="container-values animate-element">
 			<div class="container-values__col">
+				<div class="container-headers">
+					<div class="caption">
+						<p>НАШИ</p>
+					</div>
+					<h2>ценности</h2>
+				</div>
 				<div>
 					<span>01</span>
 					<h5>компетентность</h5>
@@ -810,6 +866,183 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="container-team__slider">
+
+				<div class="container-team__slider-navigation">
+					<div class="container-team__slider-counter">
+						<span class="team-counter"></span>
+						<span class="team-number"></span>
+						<div class="team-progress"></div>
+					</div>
+					<div class="slider-navigation">
+						<span class="button button-prev" id="owl-team-prev">
+							<img src="media/icons/icon_arrow-narrow-left.svg" class="img-svg">
+						</span>
+						<span class="button button-next" id="owl-team-next">
+							<img src="media/icons/icon_arrow-narrow-right.svg" class="img-svg">
+						</span>
+					</div>
+				</div>
+
+				<div class="team-slider owl-carousel owl-theme">
+
+					<div class="team-slider-item">
+						<div class="container-team__item">
+							<div class="container-team__item-view">
+								<div class="head">
+									<img src="media/team/photo_01.jpg" alt="">
+								</div>
+								<div class="body">
+									<div>
+										<h4>Ондер Кая</h4>
+										<span>CEO</span>
+									</div>
+									<a href="#team-01" class="open-team-modal">
+										<img src="media/icons/icon_plus.svg" alt="" class="img-svg">
+									</a>
+								</div>
+							</div>
+
+							<div class="container-team__item-modal mfp-hide" id="team-01">
+								<div class="container-team__item-modal__col-01">
+									<div class="head">
+										<a class="close-team-modal">
+											<img src="media/icons/icon_close.svg" alt="" class="img-svg">
+										</a>
+										<h4>ондер кая</h4>
+										<span>CEO</span>
+									</div>
+									<div class="body">
+										<p>Ондер Кая в 2006 году закончил Dumlupinar University по специальности Инженер Строитель.</p>
+										<p>В резюме Ондер бея работа на технических и руководящих должностях в компаниях «Бюро Веритас Казахстан Индастриал Сервисез», проекты «Строительство нового терминала Международного Аэропорта Алматы» (TAVAirports), Строительство БЦ DPGв г. Алматы, Строительство БЦ Talan Towers, Строительство ЖК Алмалы (Bazis) и других.</p>
+									</div>
+								</div>
+								<div class="container-team__item-modal__col-02">
+									<img src="media/team/photo_01.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="team-slider-item">
+						<div class="container-team__item">
+							<div class="container-team__item-view">
+								<div class="head">
+									<img src="media/team/photo_01.jpg" alt="">
+								</div>
+								<div class="body">
+									<div>
+										<h4>Ондер Кая</h4>
+										<span>CEO</span>
+									</div>
+									<a href="#team-01" class="open-team-modal">
+										<img src="media/icons/icon_plus.svg" alt="" class="img-svg">
+									</a>
+								</div>
+							</div>
+
+							<div class="container-team__item-modal mfp-hide" id="team-01">
+								<div class="container-team__item-modal__col-01">
+									<div class="head">
+										<a class="close-team-modal">
+											<img src="media/icons/icon_close.svg" alt="" class="img-svg">
+										</a>
+										<h4>ондер кая</h4>
+										<span>CEO</span>
+									</div>
+									<div class="body">
+										<p>Ондер Кая в 2006 году закончил Dumlupinar University по специальности Инженер Строитель.</p>
+										<p>В резюме Ондер бея работа на технических и руководящих должностях в компаниях «Бюро Веритас Казахстан Индастриал Сервисез», проекты «Строительство нового терминала Международного Аэропорта Алматы» (TAVAirports), Строительство БЦ DPGв г. Алматы, Строительство БЦ Talan Towers, Строительство ЖК Алмалы (Bazis) и других.</p>
+									</div>
+								</div>
+								<div class="container-team__item-modal__col-02">
+									<img src="media/team/photo_01.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="team-slider-item">
+						<div class="container-team__item">
+							<div class="container-team__item-view">
+								<div class="head">
+									<img src="media/team/photo_01.jpg" alt="">
+								</div>
+								<div class="body">
+									<div>
+										<h4>Ондер Кая</h4>
+										<span>CEO</span>
+									</div>
+									<a href="#team-01" class="open-team-modal">
+										<img src="media/icons/icon_plus.svg" alt="" class="img-svg">
+									</a>
+								</div>
+							</div>
+
+							<div class="container-team__item-modal mfp-hide" id="team-01">
+								<div class="container-team__item-modal__col-01">
+									<div class="head">
+										<a class="close-team-modal">
+											<img src="media/icons/icon_close.svg" alt="" class="img-svg">
+										</a>
+										<h4>ондер кая</h4>
+										<span>CEO</span>
+									</div>
+									<div class="body">
+										<p>Ондер Кая в 2006 году закончил Dumlupinar University по специальности Инженер Строитель.</p>
+										<p>В резюме Ондер бея работа на технических и руководящих должностях в компаниях «Бюро Веритас Казахстан Индастриал Сервисез», проекты «Строительство нового терминала Международного Аэропорта Алматы» (TAVAirports), Строительство БЦ DPGв г. Алматы, Строительство БЦ Talan Towers, Строительство ЖК Алмалы (Bazis) и других.</p>
+									</div>
+								</div>
+								<div class="container-team__item-modal__col-02">
+									<img src="media/team/photo_01.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="team-slider-item">
+						<div class="container-team__item">
+							<div class="container-team__item-view">
+								<div class="head">
+									<img src="media/team/photo_01.jpg" alt="">
+								</div>
+								<div class="body">
+									<div>
+										<h4>Ондер Кая</h4>
+										<span>CEO</span>
+									</div>
+									<a href="#team-01" class="open-team-modal">
+										<img src="media/icons/icon_plus.svg" alt="" class="img-svg">
+									</a>
+								</div>
+							</div>
+
+							<div class="container-team__item-modal mfp-hide" id="team-01">
+								<div class="container-team__item-modal__col-01">
+									<div class="head">
+										<a class="close-team-modal">
+											<img src="media/icons/icon_close.svg" alt="" class="img-svg">
+										</a>
+										<h4>ондер кая</h4>
+										<span>CEO</span>
+									</div>
+									<div class="body">
+										<p>Ондер Кая в 2006 году закончил Dumlupinar University по специальности Инженер Строитель.</p>
+										<p>В резюме Ондер бея работа на технических и руководящих должностях в компаниях «Бюро Веритас Казахстан Индастриал Сервисез», проекты «Строительство нового терминала Международного Аэропорта Алматы» (TAVAirports), Строительство БЦ DPGв г. Алматы, Строительство БЦ Talan Towers, Строительство ЖК Алмалы (Bazis) и других.</p>
+									</div>
+								</div>
+								<div class="container-team__item-modal__col-02">
+									<img src="media/team/photo_01.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
 		</div>
 	</div>
 </section>
@@ -842,6 +1075,7 @@
 							<input type="text" name="feedback-number" placeholder="номер телефона">
 							<button>оставить заявку</button>
 						</form>
+						<a class="button application-modal-toggle">оставить заявку</a>
 					</div>
 				</div>
 				<div class="background"></div>

@@ -11,7 +11,6 @@ jQuery(window).on('load', function () {
 
     jQuery("#progress").width("100%")
 
-
     setTimeout(function(){
         jQuery(".container-preloader__animation").fadeOut();
         jQuery(".container-preloader__block").fadeOut();
@@ -20,7 +19,7 @@ jQuery(window).on('load', function () {
 
     setTimeout(function(){
         jQuery(".section-preloader").fadeOut();
-        jQuery('html').css('overflowY', 'auto');
+        jQuery('html').toggleClass('overflowY', 'auto');
     }, 6000)
    
  })
@@ -169,6 +168,8 @@ jQuery('.benefits-slider').on('changed.owl.carousel', function(e) {
 
 jQuery('#desktop-menu-button').click(function(){
 
+    jQuery(".burger-menu__icon").toggleClass("active");
+
     jQuery(".section-menu").toggleClass("active");
     jQuery(".container-menu__background-01").toggleClass("active");
     jQuery(".container-menu__col-02").toggleClass("active");
@@ -225,6 +226,58 @@ jQuery('#close-filters').click(function(){
 
 /*--------------------------------------------------------------
 >>> FILTERS MODAL CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> SORT MODAL CODE START:
+--------------------------------------------------------------*/
+
+jQuery('#open-sort').click(function(){
+    jQuery(".section-sort").toggleClass("active");
+    jQuery(".section-sort .background").toggleClass("active");
+    setTimeout(function(){
+        jQuery('html').toggleClass("overflow");
+    }, 300)
+})
+
+jQuery('#close-sort').click(function(){
+    jQuery(".section-sort").toggleClass("active");
+    jQuery(".section-sort .background").toggleClass("active");
+    setTimeout(function(){
+        jQuery('html').toggleClass("overflow");
+    }, 300)
+})
+
+/*--------------------------------------------------------------
+>>> SORT MODAL CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+>>> CITIES MODAL CODE START:
+--------------------------------------------------------------*/
+
+jQuery('#open-cities').click(function(){
+    jQuery(".section-cities").toggleClass("active");
+    jQuery(".section-cities .background").toggleClass("active");
+    setTimeout(function(){
+        jQuery('html').toggleClass("overflow");
+    }, 300)
+})
+
+jQuery('#close-cities').click(function(){
+    jQuery(".section-cities").toggleClass("active");
+    jQuery(".section-cities .background").toggleClass("active");
+    setTimeout(function(){
+        jQuery('html').toggleClass("overflow");
+    }, 300)
+})
+
+/*--------------------------------------------------------------
+>>> CITIES MODAL CODE END.
 --------------------------------------------------------------*/
 
 
@@ -651,6 +704,24 @@ jQuery('.projects-map-slider').owlCarousel({
     dotsContainer: '.projects-map-slider__progress',
 })
 
+jQuery('.projects-mobile__item').click(function(){
+    jQuery(this).toggleClass("active");
+})
+
+jQuery('.projects-mobile-slider').owlCarousel({
+    loop: true,
+    touchDrag: false,
+    mouseDrag: false,
+    nav: false,
+    dots: true,
+    autoWidth: false,
+    autoHeight: false,
+    autoplay: true,
+    items: 1,
+    smartSpeed: 1500,
+    dotsContainer: '.projects-mobile-slider__progress',
+})
+
 /*--------------------------------------------------------------
 >>> PROJECTS MAP OPTION CODE END.
 --------------------------------------------------------------*/
@@ -672,7 +743,24 @@ jQuery('.similar-slider').owlCarousel({
     autoplay: false,
     items:4,
     smartSpeed: 1500,
-    margin: 32
+    responsive: {
+        0: {
+            items: 1,
+            margin: 10
+        },
+        721:{
+            items: 2,
+            margin: 32
+        },
+        921: {
+            items: 3,
+            margin: 32
+        },
+        1181: {
+            items: 4,
+            margin: 32
+        }
+    },
 })
 
 let owlSimilarSlider = jQuery('.similar-slider');
@@ -720,7 +808,7 @@ jQuery('.grid-slider').owlCarousel({
     dots: false,
     autoWidth: false,
     autoHeight: false,
-    autoplay: true,
+    autoplay: false,
     items:1,
     animateOut: 'fadeOut',
     smartSpeed: 5000,
@@ -745,6 +833,60 @@ jQuery('#owl-grid-next').click(function() {
 
 
 /*--------------------------------------------------------------
+>>> TEAM SLIDER CODE START:
+--------------------------------------------------------------*/
+
+jQuery('.team-slider').owlCarousel({
+    loop: false,
+    touchDrag: false,
+    mouseDrag: false,
+    nav: false,
+    dots: true,
+    autoWidth: true,
+    autoHeight: false,
+    autoplay: false,
+    items:1,
+    smartSpeed: 1500,
+    dotsContainer: '.team-progress',
+    responsive: {
+        0: {
+            items: 1,
+            margin: 40
+        },
+        721:{
+            items: 2,
+            margin: 40
+        },
+    },
+    onInitialized: function(e) {
+        jQuery('.team-counter').text( '01')
+        jQuery('.team-number').text(' / 0' + this.items().length)
+    }
+})
+
+let owlTeamSlider = jQuery('.team-slider');
+owlTeamSlider.owlCarousel();
+
+jQuery('#owl-team-prev').click(function() {
+    owlTeamSlider.trigger('prev.owl.carousel');
+})
+
+jQuery('#owl-team-next').click(function() {
+    owlTeamSlider.trigger('next.owl.carousel');
+})
+
+jQuery('.team-slider').on('changed.owl.carousel', function(e) {
+    jQuery('.team-counter').text('0' + ++e.page.index)
+    jQuery('.team-number').text(' / 0' + e.item.count)
+});
+
+/*--------------------------------------------------------------
+>>> TEAM SLIDER CODE END.
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
 >>> TEAM MEMBER MODAL CODE START:
 --------------------------------------------------------------*/
 
@@ -752,7 +894,8 @@ jQuery('.open-team-modal').magnificPopup({
     type: 'inline',
     preloader: false,
     modal: true,
-    midClick: true
+    midClick: true,
+    mainClass: 'team-modal-container'
 });
 
 jQuery(document).on('click', '.close-team-modal', function (e) {
@@ -800,23 +943,25 @@ let sectionHeightGallery = jQuery('.section-gallery').height(),
 
 gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.create({
-    trigger: ".container-about",
-    start: `${(sectionHeightAbout / 2)}px`,
-    end: `+=${(sectionHeightAbout / 2)}px`,
-    markers: false,
-    pinSpacing: false,
-    pin: true,
-})
+if(jQuery(window).width() > 921){
+    ScrollTrigger.create({
+        trigger: ".container-about",
+        start: `${(sectionHeightAbout / 2)}px`,
+        end: `+=${(sectionHeightAbout / 2)}px`,
+        markers: false,
+        pinSpacing: false,
+        pin: true,
+    })
 
-ScrollTrigger.create({
-    trigger: ".container-team__col-01",
-    start: `top`,
-    end: `bottom`,
-    markers: false,
-    pinSpacing: false,
-    pin: true,
-})
+    ScrollTrigger.create({
+        trigger: ".container-team__col-01",
+        start: `top`,
+        end: `bottom`,
+        markers: false,
+        pinSpacing: false,
+        pin: true,
+    })
+}
 
 /* ScrollTrigger code end. */
 
@@ -830,46 +975,46 @@ ScrollTrigger.create({
 >>> CUSTOM SCROLL CODE START:
 --------------------------------------------------------------*/
 
-let cursor = document.querySelector('.cursor');
-let a = document.querySelectorAll('a');
-let buttons = document.querySelectorAll('.button');
+// let cursor = document.querySelector('.cursor');
+// let a = document.querySelectorAll('a');
+// let buttons = document.querySelectorAll('.button');
 
-document.addEventListener('mousemove', function(e){
-  let x = e.clientX;
-  let y = e.clientY;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-});
+// document.addEventListener('mousemove', function(e){
+//   let x = e.clientX;
+//   let y = e.clientY;
+//   cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+// });
 
-document.addEventListener('mousemove', function(e){
-  let x = e.clientX;
-  let y = e.clientY;
-});
+// document.addEventListener('mousemove', function(e){
+//   let x = e.clientX;
+//   let y = e.clientY;
+// });
 
-document.addEventListener('mousedown', function(){
-  cursor.classList.add('click');
-});
+// document.addEventListener('mousedown', function(){
+//   cursor.classList.add('click');
+// });
 
-document.addEventListener('mouseup', function(){
-  cursor.classList.remove('click')
-});
+// document.addEventListener('mouseup', function(){
+//   cursor.classList.remove('click')
+// });
 
-a.forEach(item => {
-  item.addEventListener('mouseover', () => {
-    cursor.classList.add('hover');
-  });
-  item.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-})
+// a.forEach(item => {
+//   item.addEventListener('mouseover', () => {
+//     cursor.classList.add('hover');
+//   });
+//   item.addEventListener('mouseleave', () => {
+//     cursor.classList.remove('hover');
+//   });
+// })
 
-buttons.forEach(item => {
-  item.addEventListener('mouseover', () => {
-    cursor.classList.add('hover');
-  });
-  item.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-})
+// buttons.forEach(item => {
+//   item.addEventListener('mouseover', () => {
+//     cursor.classList.add('hover');
+//   });
+//   item.addEventListener('mouseleave', () => {
+//     cursor.classList.remove('hover');
+//   });
+// })
 
 /*--------------------------------------------------------------
 >>> CUSTOM SCROLL CODE END.

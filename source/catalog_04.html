@@ -103,7 +103,11 @@
 						</div>
 						<div class="navigation-block__burger-menu" id="desktop-menu-button">
 							<span>Меню</span>
-							<img src="media/icons/icon_burger.svg" class="img-svg" id="desktop-menu-icon" alt="">
+							<!-- <img src="media/icons/icon_burger.svg" class="img-svg" id="desktop-menu-icon" alt=""> -->
+							<div class="burger-menu__icon">
+								<span></span>
+								<span></span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -184,7 +188,127 @@
 	</div>
 </section>
 
-<section class="wrapper-full">
+<!-- FILTERS FOR PROJECTS IN MOBILE VIEW -->
+<section class="wrapper-full section-filters">
+	<div class="wrapper-fix wrapper-filters">
+		<div class="container-filters">
+			<form class="container-filters__form">
+				<div class="container-filters__head">
+					<button type="reset">Сбросить</button>
+					<span>Фильтры</span>
+					<div class="container-filter__close" id="close-filters">
+						<img src="media/icons/icon_close.svg" alt="Закрыть">
+					</div>
+				</div>
+				<div class="container-filters__body">
+
+					<div class="input-block buttons">
+						<p>Класс жк</p>
+						<div class="radio-group">
+							<input type="radio" id="class-00" name="class" value="0" checked>
+							<label for="class-00">Все</label>
+
+							<input type="radio" id="class-01" name="class" value="1">
+							<label for="class-01">премиум</label>
+
+							<input type="radio" id="class-02" name="class" value="2">
+							<label for="class-02">бизнес</label>
+							
+							<input type="radio" id="class-03" name="class" value="3">
+							<label for="class-03">комфорт+</label>
+						</div>
+					</div>
+
+					<div class="input-block customizations-select process-select">
+						<p>Готовность</p>
+						<select id="process-select">
+							<option value="1">Все</option>
+							<option value="2">Объект сдан</option>
+							<option value="3">Строится</option>
+						</select>	
+					</div>
+
+					<div class="input-block buttons">
+						<p>Комнатность</p>
+						<div class="radio-group">
+							<input type="radio" id="projects-panel-room-00" name="rooms" value="0">
+							<label for="projects-panel-room-00">Студия</label>
+
+							<input type="radio" id="projects-panel-room-01" name="rooms" value="1">
+							<label for="projects-panel-room-01">1к</label>
+
+							<input type="radio" id="projects-panel-room-02" name="rooms" value="2">
+							<label for="projects-panel-room-02">2к</label>
+							
+							<input type="radio" id="projects-panel-room-03" name="rooms" value="3">
+							<label for="projects-panel-room-03">3к+</label>
+						</div>
+					</div>
+
+					<div class="input-block range">
+						<p>Стоимость квартиры, млн ₸</p>
+						<div class="range-input">
+							<div class="values">
+								<span id="filters-window-lower-value"></span>
+								<span id="filters-window-upper-value"></span>
+							</div>
+							<div class="custom-range" id="filters-window-range"></div>
+						</div>
+					</div>
+
+				</div>
+				<div class="container-filters__footer">
+					<button class="button">Показать 5 проектов</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<!-- SORT SELECTOR FORM IN MOBILE VIEW -->
+<section class="wrapper-full section-sort">
+	<div class="wrapper-sort">
+		<div class="container-sort">
+			<div class="container-sort__row-01">
+				<div class="background"></div>
+			</div>
+			<div class="container-sort__row-02">
+				<div class="sort-block">
+					<div class="sort-block__head">
+						<p>Сортировка</p>
+						<img src="media/icons/icon_close.svg" alt="" id="close-sort">
+					</div>
+					<div class="sort-block__body">
+						<div class="sort-form">
+							<form>
+								<div class="input-block buttons">
+									<div class="radio-group">
+										<input type="radio" id="default-sort" name="sort" value="0" checked>
+										<label for="default-sort">Сначала популярные</label>
+
+										<input type="radio" id="sort-01" name="sort" value="1">
+										<label for="sort-01">Сначала дешевле</label>
+
+										<input type="radio" id="sort-02" name="sort" value="2">
+										<label for="sort-02">Сначала дороже</label>
+										
+										<input type="radio" id="sort-03" name="sort" value="3">
+										<label for="sort-03">Сначала с большей квадратурой</label>
+
+										<input type="radio" id="sort-04" name="sort" value="3">
+										<label for="sort-04">Сначала с меньшей квадратурой</label>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="wrapper-full section-catalog-title">
 	<div class="wrapper-fix">
 		<div class="container-headers margin-large">
 			<div class="caption">
@@ -265,6 +389,18 @@
 			</div>
 			<div class="container-catalog__column-02">
 				<div class="container-catalog__row-01">
+
+					<div class="catalog-filters-mobile">
+						<div class="catalog-filters__button" id="open-filters">
+							<img src="media/icons/icon_filters.svg" class="img-svg" alt="">
+							<span>Фильтры</span>
+						</div>
+						<div class="catalog-filters__button" id="open-sort">
+							<img src="media/icons/icon_sort.svg" class="img-svg" alt="">
+							<span>Сортировка</span>
+						</div>
+					</div>
+
 					<div class="result">
 						<p>Найдено 3 кладовые</p>
 					</div>

@@ -9,7 +9,7 @@
 	box-sizing: border-box
 
 html
-	overflow-y: hidden
+	// overflow-y: hidden
 
 	&.overflow
 		overflow: hidden
@@ -20,7 +20,7 @@ body
 	scroll-behavior: smooth
 	-webkit-font-smoothing: antialiased
 	background-color: var(--color-white)
-	cursor: none
+	// cursor: none
 
 	&::-webkit-scrollbar
 		width: 3px
@@ -50,8 +50,8 @@ p
 	font-family: var(--font-family-text)
 	color: var(--color-dark-100)
 
-a
-	cursor: none
+// a
+// 	cursor: none
 
 @mixin element_animation
 	transition-timing-function: ease-in-out
@@ -111,6 +111,11 @@ a
 							span
 								color: var(--color-dark-40)
 
+			.navigation-block__burger-menu
+				.burger-menu__icon
+					span
+						background-color: var(--color-dark-100)
+
 	&.dark-theme
 		background-color: rgba(37, 38, 38, 0.20)
 
@@ -140,8 +145,9 @@ a
 
 
 			.navigation-block__burger-menu
-				.img-svg path
-					fill: var(--color-white)
+				.burger-menu__icon
+					span
+						background-color: var(--color-white)
 
 /* Theme support end. */
 
@@ -328,6 +334,36 @@ a
 			line-height: 20px
 			text-transform: uppercase
 
+		.burger-menu__icon
+			display: flex
+			flex-direction: column
+			row-gap: 3px
+
+			&.active
+				span
+					&:first-child
+						transform: rotate(45deg)
+						top: 3px
+						left: 0px
+
+					&:last-child
+						transform: rotate(-45deg)
+						top: -1.5px
+						left: 0px
+
+			span
+				display: inline-block
+				position: relative
+				width: 18px
+				height: 1.5px
+
+				transition-duration: 0.4s
+
+				&:first-child
+					border-radius: 25px 0px 0px 25px
+
+				&:last-child
+					border-radius: 0px 25px 25px 0px
 
 /* HEADER STYLE SETTINGS END. */
 
@@ -421,6 +457,11 @@ a
 						padding: 17px 20px
 						border: 1px solid var(--color-white)
 						@include element_animation
+
+						span.laptop-text
+							display: none
+						span.desktop-text
+							display: inline-block
 
 						img
 							width: 20px
@@ -1024,6 +1065,7 @@ a
 			line-height: 24px
 			text-transform: uppercase
 			text-decoration: none
+			letter-spacing: 0.468px
 			color: var(--color-dark-30)
 
 			&:first-child
@@ -1103,6 +1145,45 @@ a
 
 		&:first-child
 			border-right: none
+
+.catalog-filters-mobile
+	width: 100%
+	display: flex
+	margin: 0px 0px 24px 0px
+
+	display: none
+
+	.catalog-filters__button
+		width: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+		column-gap: 8px
+		border: 1px solid var(--color-dark-10)
+		padding: 12px 20px
+
+		@include element_animation
+
+		span
+			font-family: var(--font-family-subtitle)
+			font-weight: 400
+			font-size: 14px
+			line-height: 16px
+			color: var(--color-dark-100)
+			text-transform: uppercase
+
+		&:hover
+			background-color: var(--color-dark-05)
+
+		&:first-child
+			border-right: none
+
+			.img-svg path
+				stroke: var(--color-orange-150)
+
+		&:last-child
+			.img-svg path
+				fill: var(--color-orange-150)
 
 
 /* Input elements styles start: */
@@ -1527,6 +1608,7 @@ a
 
 .projects-map__select
 	width: 100%
+	padding: 0px 20px 0px 0px
 	margin: 0px 0px 25px 0px
 
 	.input-block
@@ -1903,14 +1985,20 @@ a
 	display: flex
 	flex-direction: row
 	align-items: flex-start
+	position: relative
 
 	.container-benefits__col-01
 		width: 57%
+		height: 100%
 		position: relative
 
 	.container-benefits__col-02
 		width: 43%
-		position: relative
+		height: 100%
+
+		display: flex
+		flex-direction: column
+		align-items: flex-end
 
 .container-benefits__slider
 	width: 150%
@@ -2007,24 +2095,24 @@ a
 		line-height: 28px
 		color: var(--color-dark-50)
 
-	.container-benefits__slider-navigation
-		width: 100%
-		justify-content: flex-end
-		border-top: 1px solid var(--color-dark-10)
-		padding: 24px 0px 0px 0px
-		margin: 70px 0px 0px 0px
+.container-benefits__slider-navigation
+	width: calc(100% - 130px)
+	justify-content: flex-end
+	border-top: 1px solid var(--color-dark-10)
+	padding: 24px 0px 0px 0px
+	margin: 70px 0px 0px 0px
 
-		.button
-			border: 1px solid var(--color-dark-10)
+	.button
+		border: 1px solid var(--color-dark-10)
 
-			&.button-prev
-				background-color: transparent
+		&.button-prev
+			background-color: transparent
 
-				.img-svg path
-					stroke: var(--color-dark-100)
+			.img-svg path
+				stroke: var(--color-dark-100)
 
-				&:hover
-					background-color: var(--color-dark-03)
+			&:hover
+				background-color: var(--color-dark-03)
 
 /* BENEFITS STYLE SETTINGS END. */
 
@@ -2230,6 +2318,7 @@ a
 
 .container-calculator__mobile
 	display: none
+	width: 100%
 	margin: 24px 0px 0px 0px
 
 	.button
@@ -2791,6 +2880,14 @@ a
 		font-size: 16px
 		line-height: 28px
 		color: var(--color-dark-100)
+		margin: 35px 0px
+
+	.container-details__map
+		display: none
+		width: 100%
+		height: 100%
+		position: relative
+		background-color: var(--color-dark-10)
 		margin: 40px 0px
 
 	.container-details__table
@@ -2819,7 +2916,7 @@ a
 					white-space: nowrap
 					font-family: var(--font-family-text)
 					font-weight: 400
-					font-size: 12px
+					font-size: 14px
 					line-height: 20px
 					color: var(--color-dark-100)
 
@@ -2861,7 +2958,7 @@ a
 		text-decoration: none
 		text-align: center
 		background-color: var(--color-orange-100)
-		padding: 16px 20px
+		padding: 18px 20px
 		@include element_animation
 
 		&.read-more
@@ -2871,6 +2968,55 @@ a
 
 		&:hover
 			background-color: var(--color-orange-150)
+
+	.container-details__plan-block
+		width: 100%
+		height: auto
+		display: none
+		margin: 0px 0px 40px 0px
+
+		.container-details__plan-row-01
+			width: 100%
+			display: flex
+			justify-content: flex-end
+
+		.container-details__plan-row-02
+			width: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			margin: 15px 0px 15px 0px
+
+			.container-details__image
+				width: 100%
+				height: 360px
+				display: flex
+				justify-content: center
+				align-items: center
+
+				img
+					max-width: 100%
+					height: 100%
+
+		.container-details__plan-row-03
+			width: 100%
+			display: flex
+			justify-content: flex-end
+
+			.container-details__image-button
+				width: 48px
+				height: 48px
+				display: flex
+				justify-content: center
+				align-items: center
+				background-color: var(--color-white)
+				border-radius: 50%
+				border: 1px solid var(--color-dark-10)
+				cursor: pointer
+				@include element_animation
+
+				&:hover
+					background-color: var(--color-dark-03)
 
 .container-details__column-02
 	.container-details__map-block
@@ -3483,6 +3629,7 @@ a
 				line-height: 24px
 				text-transform: uppercase
 				text-align: center
+				white-space: nowrap
 				color: var(--color-orange-150)
 
 	.container-post__row-02
@@ -3866,6 +4013,11 @@ a
 		&:nth-child(1)
 			top: 20%
 
+			.container-headers
+				display: none
+				border: none
+				margin: 0px 0px 40px 0px
+
 		&:nth-child(2)
 			top: 50%
 
@@ -4004,63 +4156,63 @@ a
 				row-gap: 88px
 				padding: 100px 48px 100px 48px
 
-			.container-team__item
-				.container-team__item-view
-					.head
-						height: 460px
-						margin: 0px 20px
-						position: relative
+.container-team__item
+	.container-team__item-view
+		.head
+			height: 460px
+			margin: 0px 20px
+			position: relative
 
-						img
-							width: 100%
-							height: 100%
-							position: absolute
-							left: 50%
-							top: 50%
-							transform: translate(-50%, -50%)
-							object-fit: cover
+			img
+				width: 100%
+				height: 100%
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				object-fit: cover
 
-					.body
-						width: 100%
-						display: flex
-						justify-content: space-between
-						align-items: center
-						column-gap: 30px
-						margin: 20px 0px 0px 0px
+		.body
+			width: 100%
+			display: flex
+			justify-content: space-between
+			align-items: center
+			column-gap: 30px
+			margin: 20px 0px 0px 0px
 
-						h4
-							font-family: var(--font-family-title)
-							font-weight: 300
-							font-size: 32px
-							line-height: 40px
-							text-transform: uppercase
-							color: var(--color-dark-100)
-							margin: 0px 0px 5px 0px
+			h4
+				font-family: var(--font-family-title)
+				font-weight: 300
+				font-size: 32px
+				line-height: 40px
+				text-transform: uppercase
+				color: var(--color-dark-100)
+				margin: 0px 0px 5px 0px
 
-						span
-							font-family: var(--font-family-text)
-							font-weight: 300
-							font-size: 14px
-							line-height: 16px
-							color: var(--color-dark-50)
+			span
+				font-family: var(--font-family-text)
+				font-weight: 300
+				font-size: 14px
+				line-height: 16px
+				color: var(--color-dark-50)
 
-						a.open-team-modal
-							width: 64px
-							height: 64px
-							display: flex
-							justify-content: center
-							align-items: center
-							border: 1px solid var(--color-dark-10)
-							background-color: var(--color-white)
-							border-radius: 50px
-							cursor: pointer
-							@include element_animation
+			a.open-team-modal
+				width: 64px
+				height: 64px
+				display: flex
+				justify-content: center
+				align-items: center
+				border: 1px solid var(--color-dark-10)
+				background-color: var(--color-white)
+				border-radius: 50px
+				cursor: pointer
+				@include element_animation
 
-							&:hover
-								background-color: var(--color-orange-100)
+				&:hover
+					background-color: var(--color-orange-100)
 
-								.img-svg path
-									stroke: var(--color-white)
+					.img-svg path
+						stroke: var(--color-white)
 
 .container-team__item-modal
 	width: 100%
@@ -4133,6 +4285,46 @@ a
 			top: 50%
 			transform: translate(-50%, -50%)
 			object-fit: cover
+
+.container-team__slider
+	width: 100%
+	display: none
+	position: relative
+	margin: 30px 0px 0px 0px
+
+	.container-team__slider-navigation
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		margin: 0px 0px 30px 0px
+
+		.container-team__slider-counter
+			display: none
+
+			.team-progress
+				display: none
+
+			span
+				font-family: var(--font-family-subtitle)
+				font-weight: 400
+				font-size: 14px
+				line-height: 16px
+				color: var(--color-dark-100)
+				letter-spacing: 0.56px
+
+		.slider-navigation
+			.button
+				border: 1px solid var(--color-dark-10)
+
+				&.button-prev
+					background-color: transparent
+
+					.img-svg path
+						stroke: var(--color-dark-100)
+
+					&:hover
+						background-color: var(--color-dark-03)
 
 /* TEAM STYLE SETTINGS END. */
 
@@ -4346,14 +4538,14 @@ a
 						align-items: center
 						@include element_animation
 
-	
-
 	.container-feedback-col-02
 		& > div
+			display: block
 			width: 180%
 			height: 100%
 			position: absolute
 			right: -100%
+			left: auto
 			top: 0px
 			z-index: 1
 			background-color: var(--color-dark-05)
@@ -4429,7 +4621,6 @@ a
 
 			padding: 24px 0px 0px 0px
 			border-top: 1px solid rgba(255, 255, 255, 0.16)
-
 
 .section-gallery__background
 	width: 100%
@@ -5009,3 +5200,478 @@ a
 					background-color: var(--color-orange-150)
 
 /* MOBILE FILTERS STYLE SETTINGS END. */
+
+
+
+/* MOBILE PROJECTS SETTINGS START: */
+
+.section-projects-mobile
+	height: 100vh
+
+	position: fixed
+	top: auto
+	right: auto
+	left: auto
+	bottom: 0%
+	z-index: 80
+	
+	border: none
+	visibility: visible
+	opacity: 1
+
+	transition-duration: 0.3s
+	transition-timing-function: ease-in-out
+	transform: translateY(100%)
+
+	&.active
+		transform: translateY(0%)
+
+	.wrapper-projects-mobile
+		height: 100%
+
+.container-projects-mobile
+	height: 100%
+	display: flex
+	flex-direction: column
+
+	.projects-mobile__row-01
+		height: 100%
+
+		.background
+			width: 100%
+			height: 100%
+			position: absolute
+			right: 0%
+			top: 0px
+			z-index: 1
+
+			transition-property: background-color
+			transition-delay: 0.5s
+			transition-duration: 0.3s
+			transition-timing-function: ease-in-out
+
+			&.active
+				background-color: rgba(0, 0, 0, 0.45)
+
+	.projects-mobile__row-02
+		height: auto
+
+		.projects-mobile__list
+			height: auto
+			position: relative
+			z-index: 2
+
+.projects-mobile__list
+	.projects-mobile__item
+		display: none
+		background-color: var(--color-white)
+		padding: 0px 20px
+		border-radius: 15px 15px 0px 0px
+
+		&.active
+			display: block
+
+		.projects-mobile__item-head
+			width: 100%
+			display: flex
+			justify-content: space-between
+			align-items: center
+			cursor: pointer
+
+			padding: 24px 0px
+			border-bottom: 1px solid var(--color-dark-10)
+
+			& > div
+				display: flex
+				flex-direction: column
+
+				p
+					font-family: var(--font-family-title)
+					font-weight: 300
+					font-size: 24px
+					line-height: 24px
+					text-transform: uppercase
+					color: var(--color-dark-100)
+					@include element_animation
+
+				div
+					display: flex
+					column-gap: 20px
+					margin: 6px 0px 0px 0px
+
+					span
+						font-family: var(--font-family-subtitle)
+						font-weight: 300
+						font-size: 12px
+						line-height: 14px
+						color: var(--color-dark-50)
+						position: relative
+
+						&:after
+							content: ''
+							position: absolute
+							width: 3px
+							height: 3px
+							border-radius: 50px
+							background-color: var(--color-dark-50)
+							right: -10px
+							top: 5px
+
+						&:nth-child(2):after
+							display: none
+
+						&:last-child
+							display: none
+
+		.projects-mobile__item-body
+			.projects-mobile__item-slider
+				position: relative
+
+				.projects-mobile-slider
+					.projects-mobile-slider-item
+						height: 220px
+						position: relative
+
+						img
+							width: 100%
+							height: 100%
+							position: absolute
+							left: 50%
+							top: 50%
+							transform: translate(-50%, -50%)
+							object-fit: cover
+
+				.projects-mobile-slider__progress
+					width: 100%
+					display: flex
+					column-gap: 12px
+					justify-content: center
+					position: absolute
+					left: 0px
+					bottom: 12px
+					z-index: 2
+
+					.owl-dot
+						width: 20px
+						height: 2px
+						background-color: rgba(255, 255, 255, 0.32)
+						border: none
+						outline: none
+
+						&.active
+							background-color: var(--color-white)
+
+			.projects-mobile__item-table
+				width: 100%
+				display: flex
+				flex-direction: column
+				row-gap: 12px
+				margin: 16px 0px
+
+				.projects-mobile__item-table-item
+					width: 100%
+					display: flex
+					justify-content: space-between
+
+					span
+						display: inline-block
+						width: 50%
+
+						&:first-child
+							font-family: var(--font-family-subtitle)
+							font-weight: 400
+							font-size: 12px
+							line-height: 20px
+							color: var(--color-dark-50)
+							text-transform: uppercase
+
+						&:last-child
+							font-family: var(--font-family-text)
+							font-weight: 300
+							font-size: 14px
+							line-height: 20px
+							color: var(--color-dark-100)
+							text-align: right
+
+			.projects-mobile__item-button
+				padding: 0px 0px 10px 0px
+
+				.button
+					width: 100%
+					display: inline-block
+					font-family: var(--font-family-subtitle)
+					font-weight: 400
+					font-size: 14px
+					color: var(--color-white)
+					text-transform: uppercase
+					text-decoration: none
+					text-align: center
+					background-color: var(--color-orange-100)
+					padding: 16px 10px
+
+					@include element_animation
+
+					&:hover
+						background-color: var(--color-orange-150)
+
+/* MOBILE PROJECTS SETTINGS END. */
+
+
+
+/* MOBILE PROJECTS CONTROLS STYLE SETTINGS START: */
+
+.section-projects-controls
+	display: none
+
+	.projects-controls__close
+		width: 44px
+		height: 44px
+		border-radius: 50%
+
+		display: flex
+		justify-content: center
+		align-items: center
+		position: fixed
+		top: 20px
+		right: 20px
+		z-index: 5
+
+		background-color: var(--color-white)
+		border: 1px solid var(--color-dark-10)
+
+
+	.projects-controls__buttons
+		width: calc(100% - 40px)
+		display: flex
+		position: fixed
+		bottom: 16px
+		left: 20px
+		z-index: 5
+		background-color: var(--color-white)
+
+		.projects-controls__button
+			width: 50%
+			display: flex
+			align-items: center
+			justify-content: center
+			column-gap: 8px
+			border: 1px solid var(--color-dark-10)
+			padding: 12px 20px
+
+			@include element_animation
+
+			span
+				font-family: var(--font-family-subtitle)
+				font-weight: 400
+				font-size: 14px
+				line-height: 16px
+				color: var(--color-dark-100)
+				text-transform: uppercase
+
+			&:hover
+				background-color: var(--color-dark-05)
+
+			&:first-child
+				border-right: none
+
+/* MOBILE PROJECTS CONTROLS STYLE SETTINGS END. */
+
+
+
+/* CITIES SELECTOR STYLE STYLE SETTINGS START: */
+
+.section-cities
+	display: none
+	height: 100vh
+
+	position: fixed
+	top: auto
+	right: auto
+	left: auto
+	bottom: 0%
+	z-index: 5
+	
+	border: none
+	visibility: visible
+	opacity: 1
+
+	transition-duration: 0.3s
+	transition-timing-function: ease-in-out
+	transform: translateY(100%)
+
+	&.active
+		transform: translateY(0%)
+
+	.wrapper-cities
+		height: 100%
+
+.container-cities
+	height: 100%
+	display: flex
+	flex-direction: column
+
+	.container-cities__row-01
+		height: 100%
+
+		.background
+			width: 100%
+			height: 100%
+			position: absolute
+			right: 0%
+			top: 0px
+			z-index: 1
+
+			transition-property: background-color
+			transition-delay: 0.5s
+			transition-duration: 0.3s
+			transition-timing-function: ease-in-out
+
+			&.active
+				background-color: rgba(0, 0, 0, 0.45)
+
+	.container-cities__row-02
+		height: auto
+		position: relative
+		z-index: 2
+
+.cities-block
+	width: 100%
+	height: auto
+	background-color: var(--color-white)
+	padding: 24px 20px 16px 20px
+	border-radius: 15px 15px 0px 0px
+
+	.cities-block__head
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin: 0px 0px 26px 0px
+
+		p
+			font-family: var(--font-family-subtitle)
+			font-weight: 400
+			font-size: 16px
+			line-height: 20px
+			color: var(--color-dark-100)
+			text-transform: uppercase
+
+.cities-form
+	width: 100%
+	height: auto
+	background-color: var(--color-white)
+
+	form
+		width: 100%
+		display: flex
+		flex-direction: column
+
+		.input-block.buttons 
+			.radio-group
+				flex-direction: column
+				row-gap: 8px
+
+				label
+					width: 100%
+
+/* CITIES SELECTOR STYLE STYLE SETTINGS END. */
+
+
+
+/* SORT SELECTOR STYLE STYLE SETTINGS START: */
+
+.section-sort
+	display: none
+	height: 100vh
+
+	position: fixed
+	top: auto
+	right: auto
+	left: auto
+	bottom: 0%
+	z-index: 5
+	
+	border: none
+	visibility: visible
+	opacity: 1
+
+	transition-duration: 0.3s
+	transition-timing-function: ease-in-out
+	transform: translateY(100%)
+
+	&.active
+		transform: translateY(0%)
+
+	.wrapper-sort
+		height: 100%
+
+.container-sort
+	height: 100%
+	display: flex
+	flex-direction: column
+
+	.container-sort__row-01
+		height: 100%
+
+		.background
+			width: 100%
+			height: 100%
+			position: absolute
+			right: 0%
+			top: 0px
+			z-index: 1
+
+			transition-property: background-color
+			transition-delay: 0.5s
+			transition-duration: 0.3s
+			transition-timing-function: ease-in-out
+
+			&.active
+				background-color: rgba(0, 0, 0, 0.45)
+
+	.container-sort__row-02
+		height: auto
+		position: relative
+		z-index: 2
+
+.sort-block
+	width: 100%
+	height: auto
+	background-color: var(--color-white)
+	padding: 24px 20px 16px 20px
+	border-radius: 15px 15px 0px 0px
+
+	.sort-block__head
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin: 0px 0px 26px 0px
+
+		p
+			font-family: var(--font-family-subtitle)
+			font-weight: 400
+			font-size: 16px
+			line-height: 20px
+			color: var(--color-dark-100)
+			text-transform: uppercase
+
+.sort-form
+	width: 100%
+	height: auto
+	background-color: var(--color-white)
+
+	form
+		width: 100%
+		display: flex
+		flex-direction: column
+
+		.input-block.buttons 
+			.radio-group
+				flex-direction: column
+				row-gap: 8px
+
+				label
+					width: 100%
+
+/* SORT SELECTOR STYLE STYLE SETTINGS END. */
