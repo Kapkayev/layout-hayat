@@ -68,6 +68,9 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: hidden;
+}
 html.overflow {
   overflow: hidden;
 }
@@ -78,6 +81,7 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-white);
+  cursor: none;
 }
 body::-webkit-scrollbar {
   width: 3px;
@@ -108,6 +112,10 @@ h2 {
 p {
   font-family: var(--font-family-text);
   color: var(--color-dark-100);
+}
+
+a {
+  cursor: none;
 }
 
 /* BASE STYLE SETTINGS END. */
@@ -5453,3 +5461,16 @@ p {
 }
 
 /* SORT SELECTOR STYLE STYLE SETTINGS END. */
+/* MAP'S STYLE STYLE SETTINGS START: */
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+div#map a,
+div#map button,
+div.gm-bundled-control div.gmnoprint {
+  display: none !important;
+}
+
+/* MAP'S STYLE STYLE SETTINGS END. */
